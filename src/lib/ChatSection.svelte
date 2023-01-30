@@ -1,7 +1,7 @@
 <script lang="ts">
-    import * as PEERS from "peerjs";
+    import { Peer, DataConnection } from "peerjs";
 
-    let peer = new PEERS.Peer();
+    let peer = new Peer();
 
     let peerConnnected = false;
     let peerId = "";
@@ -16,7 +16,7 @@
 
     let username: string;
 
-    let conn: PEERS.DataConnection | null = null;
+    let conn: DataConnection | null = null;
 
     const connectToPeer = (peerID) => {
         return () => {
@@ -34,7 +34,7 @@
         };
     };
 
-    const sendMessage = (connection: PEERS.DataConnection, message: string) => {
+    const sendMessage = (connection: DataConnection, message: string) => {
         return () => {
             if (username && message) {
                 const data: Message = { username: username, content: message };
@@ -57,16 +57,14 @@
                 messages = [...messages, data];
             });
             // Pass connection to all peers.
-            peer.listAllPeers((peer)=>{
-                
-            })
+            peer.listAllPeers((peer) => {});
         });
     });
 </script>
 
 <section>
     {#if peerConnnected}
-        <h1>Connected, your ID is {peerId}</h1>
+        <h1>Ready, your ID is {peerId}</h1>
         <ul>
             {#each messages as message}
                 <li>{message.username}: {message.content}</li>
