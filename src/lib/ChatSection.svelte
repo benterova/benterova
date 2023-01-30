@@ -23,8 +23,12 @@
             const connection = peer.connect(peerID);
             conn = connection;
             connection.on("open", () => {
-                connection.on("data", (data: Message) => {
-                    messages = [...messages, data];
+                connection.on("data", (data: any) => {
+                    if (data.username && data.content) {
+                        messages = [...messages, data];
+                    } else if (data.newPeerId) {
+                        connectToPeer(data.newPeerId);
+                    }
                 });
             });
         };
@@ -36,7 +40,7 @@
                 const data: Message = { username: username, content: message };
                 connection.send(data);
                 messages = [...messages, data];
-                messageInput = ""
+                messageInput = "";
             } else {
                 alert("Please enter a username and message");
             }
@@ -52,6 +56,10 @@
             connection.on("data", (data: Message) => {
                 messages = [...messages, data];
             });
+            // Pass connection to all peers.
+            peer.listAllPeers((peer)=>{
+                
+            })
         });
     });
 </script>
