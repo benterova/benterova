@@ -1,5 +1,6 @@
 <script lang="ts">
   import "bulma/css/bulma.css";
+  import "bulma-divider/dist/css/bulma-divider.min.css";
   import ChatSection from "./lib/ChatSection.svelte";
 
   import Header from "./lib/Header.svelte";
@@ -17,6 +18,7 @@
         <ChatSection />
       </div>
     </div>
+    <div class="is-divider-vertical" />
     <div class="column">
       <h1 class="title">Realtime Chat Application</h1>
       <p>
