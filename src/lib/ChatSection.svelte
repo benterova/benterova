@@ -10,7 +10,7 @@
 
     let messages: Message[] = [];
 
-    let message: string;
+    let messageInput: string;
 
     let remotePeerId: string;
 
@@ -36,6 +36,7 @@
                 const data: Message = { username: username, content: message };
                 connection.send(data);
                 messages = [...messages, data];
+                messageInput = ""
             } else {
                 alert("Please enter a username and message");
             }
@@ -75,8 +76,8 @@
         {/if}
         {#if conn}
             <h2>Connected to {conn.peer}</h2>
-            <input type="text" bind:value={message} />
-            <button on:click={sendMessage(conn, message)}>Send</button>
+            <input type="text" bind:value={messageInput} />
+            <button on:click={sendMessage(conn, messageInput)}>Send</button>
         {:else}
             <input
                 type="text"
