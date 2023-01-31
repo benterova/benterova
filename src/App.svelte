@@ -6,7 +6,7 @@
   import Header from "./lib/Header.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import ChatSection from "./lib/sections/ChatSection.svelte";
-  import StarfieldScene from "./lib/starfield/StarfieldScene.svelte";
+  import Scene from "./lib/starfield/Scene.svelte";
   import TodoSection from "./lib/todo/TodoSection.svelte";
 </script>
 
@@ -14,7 +14,7 @@
   <!-- <Navbar /> -->
   <div class="container is-fluid">
     <Header showBackground>
-      <StarfieldScene />
+      <Scene />
     </Header>
     <div class="block">
       <h1 class="title has-text-centered m-6">Example Projects</h1>

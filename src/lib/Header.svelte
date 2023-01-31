@@ -19,15 +19,12 @@
     font-style: italic;
   }
   .hero-background {
-    /* Center the canvas with a right offset */
     position: absolute;
-    top: 0;
-    left: 0;
-    /* Make the canvas as large as the hero */
     width: 100%;
     height: 100%;
-    /* Make the canvas cover the hero */
     overflow: hidden;
     z-index: -1;
+    top: 0;
+    left: 0;
   }
 </style>
