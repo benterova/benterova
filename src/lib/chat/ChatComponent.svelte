@@ -115,7 +115,7 @@
           placeholder={faker.internet.userName()}
           on:keyup={(e) => {
             if (e.key === "Enter") {
-              setUsername(document.getElementById("username-field").value)();
+              setUsername(this.value)();
             }
           }}
         />
@@ -124,8 +124,7 @@
     <div class="field">
       <button
         class="button is-primary"
-        on:click={() =>
-          setUsername(document.getElementById("username-field").value)()}
+        on:click={() => setUsername(this.value)()}
       >
         Set Username
       </button>
