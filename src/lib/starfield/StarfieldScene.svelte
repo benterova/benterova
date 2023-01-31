@@ -2,43 +2,42 @@
   import * as THREE from "three";
   import { T, Canvas, MeshInstance, Instance } from "@threlte/core";
 
-  const resizeRendererToDisplaySize = (renderer: THREE.Renderer) => {
-    const canvas = renderer.domElement;
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-    const needResize = canvas.width !== width || canvas.height !== height;
-    // resize only when necessary
-    if (needResize) {
-      //3rd parameter `false` to change the internal canvas size
-      renderer.setSize(width, height, false);
-    }
-    return needResize;
-  };
-
   const maxStars = 300;
 
-  requestAnimationFrame(() => {});
-
-  const stars = new THREE.Points(
-    new THREE.BufferGeometry(),
-    new THREE.PointsMaterial({
-      color: 0x888888,
+  const stars = new THREE.Mesh(
+    new THREE.SphereGeometry(1),
+    new THREE.MeshBasicMaterial({
+      color: "red",
     })
   );
 </script>
 
-<div>
+<div class="starfield">
   <Canvas>
     <T.PerspectiveCamera />
     <T.AmbientLight color={0xffffff} />
-    <T.MeshInstance mesh={stars}>
-      <T.Instance position={[0, 0, 0]} />
-    </T.MeshInstance>
+    <MeshInstance mesh={stars}>
+      {#each Array.from({ length: maxStars }) as _, i}
+        console.log(i);
+        <Instance
+          scale={new THREE.Vector3(
+            Math.random() * 10,
+            Math.random() * 10,
+            Math.random() * 10
+          )}
+          position={new THREE.Vector3(
+            Math.random() * 1000 - 500,
+            Math.random() * 1000 - 500,
+            Math.random() * 1000 - 500
+          )}
+        />
+      {/each}
+    </MeshInstance>
   </Canvas>
 </div>
 
 <style>
-  #starfield {
+  .starfield {
     position: absolute;
     top: 0;
     left: 0;
@@ -46,5 +45,9 @@
     height: 100%;
     overflow: hidden;
     /* z-index: -1; */
+  }
+  canvas{
+    width: 100%;
+    height: 100%;
   }
 </style>
