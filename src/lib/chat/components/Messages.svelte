@@ -1,15 +1,29 @@
 <script lang="ts">
-  import type { Message } from "../types";
-  export let messages: Message[];
+  import { scrollToBottom } from "../../util";
+  import type { ChatMessage } from "../types";
+  export let messages: ChatMessage[];
   export let peerId: string;
+
+  $: messages.forEach((message) => {
+    if (message.peerId === peerId) {
+      // For display
+      message.username = "You";
+    }
+  });
+
+  let element: Node;
+
+  // Scroll to bottom of messages when new message is added
+  $: scrollToBottom(element);
 </script>
 
-<ul class="message-container">
+<ul class="message-container" bind:this={element}>
   {#each messages as message}
     <li data-from={message.peerId} class="message">
       <div class="message-header">
         <div class="username {message.peerId == peerId ? 'self-message' : ''}">
           {message.username}
+          <p class="is-size-7">{message.peerId}</p>
         </div>
         <div class="timestamp">
           {new Date(message.timestamp).toLocaleTimeString()}

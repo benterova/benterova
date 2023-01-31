@@ -1,17 +1,17 @@
 <script lang="ts">
   import { Peer } from "peerjs";
-  import type { DataConnection } from "peerjs";
   import { faker } from "@faker-js/faker";
   import PeerId from "./components/PeerId.svelte";
-  import type { Message } from "./types";
+  import type { ChatMessage } from "./types";
   import Messages from "./components/Messages.svelte";
   import AlertComponent from "./components/AlertComponent.svelte";
+  import { ChatHandler } from "./ChatHandler";
 
   let peer = new Peer();
 
-  let peerConnnected = false;
+  let peerOpen = false;
   let peerId = "";
-  let messages: Message[] = [];
+  let messages: ChatMessage[] = [];
 
   let messageInputVal: string;
 
@@ -19,9 +19,9 @@
 
   let username: string;
 
-  let conn: DataConnection | null = null;
-
   let errorMessage: string | null = null;
+
+  let chatHandler: ChatHandler;
 
   const connectToPeer = (remoteId) => {
     return () => {
@@ -30,46 +30,33 @@
         return;
       }
       const connection = peer.connect(remoteId);
-      conn = connection;
       connection.on("open", () => {
         errorMessage = null;
-        connection.on("data", (data: any) => {
-          if (data.username && data.content) {
-            const newMessage: Message = { ...data, peerId: remoteId };
-            messages = [...messages, newMessage];
-          } else if (data.newPeerId) {
-            connectToPeer(data.newPeerId);
-          }
-        });
+        chatHandler = new ChatHandler(connection, () => {}, handleDisconnect);
       });
     };
   };
 
+  $: if (chatHandler) {
+    chatHandler.messages().subscribe((msgs) => {
+      messages = msgs;
+    });
+  }
   $: if (errorMessage) {
     setTimeout(() => {
       errorMessage = null;
     }, 5000);
   }
 
-  const closeConnection = (connection) => {
+  const sendMessage = (message: string) => {
     return () => {
-      connection.close();
-      conn = null;
-      messages = [];
-    };
-  };
-
-  const sendMessage = (connection: DataConnection, message: string) => {
-    return () => {
-      while (username && message) {
-        const data: Message = {
-          username: username,
-          content: message,
-          peerId,
-          timestamp: new Date().getDate(),
-        };
-        connection.send(data);
-        messages = [...messages, data];
+      while (username && message && message !== "\n") {
+        const msg: ChatMessage = chatHandler.buildMessage(
+          message,
+          username,
+          peerId
+        );
+        chatHandler.sendMessage(msg);
         messageInputVal = "";
         return;
       }
@@ -77,6 +64,7 @@
         errorMessage = "Please enter a username";
         return;
       }
+      messageInputVal = "";
       errorMessage = "Please enter a message";
     };
   };
@@ -86,27 +74,25 @@
       while (name) {
         errorMessage = null;
         username = name;
+        remotePeerId = null;
         return;
       }
       errorMessage = "Please enter a username";
     };
   };
 
-  peer.on("open", function (id) {
-    peerConnnected = true;
-    peerId = id;
+  const handleDisconnect = () => {
+    chatHandler = null;
+    username = null;
+    messages = [];
+  };
 
-    peer.on("connection", function (connection) {
-      conn = connection;
-      connection.on("data", (data: Message) => {
-        messages = [...messages, data];
-      });
-      // Handle disconnection
-      connection.on("close", () => {
-        conn = null;
-      });
-      // TODO: Pass connection to all peers.
-      peer.listAllPeers((peer) => {});
+  peer.on("open", function (id) {
+    peerOpen = true;
+    peerId = id;
+    localStorage.setItem("peerId", id);
+    peer.on("connection", function (conn) {
+      chatHandler = new ChatHandler(conn, () => {}, handleDisconnect);
     });
   });
 </script>
@@ -115,7 +101,9 @@
   {#if errorMessage}
     <AlertComponent flashMessage={errorMessage} />
   {/if}
+
   <h1 class="title">PeerChat</h1>
+
   {#if !username}
     <div class="field">
       <label class="label">Username</label>
@@ -142,7 +130,7 @@
         Set Username
       </button>
     </div>
-  {:else if !conn}
+  {:else if !chatHandler}
     <PeerId {peerId} />
     <div class="field">
       <label class="label">Remote Peer ID</label>
@@ -169,20 +157,25 @@
     </div>
   {/if}
 
-  {#if conn}
+  {#if chatHandler}
     <PeerId {peerId} small />
+    <p class="is-size-6 has-text-centered">Your Username: {username}</p>
+    {#if messages?.length}
+      <Messages {messages} {peerId} />
+    {:else}
+      <p class="has-text-centered">No messages yet</p>
+    {/if}
     <div class="is-divider" />
-    <Messages {messages} {peerId} />
-    <p class="is-size-7">Connected to {conn.peer}</p>
+
+    <p class="is-size-7">Connected to {chatHandler.getPeerId()}</p>
     <div class="field">
       <div class="control">
-        <input
-          class="input"
-          type="text"
+        <textarea
+          class="textarea"
           bind:value={messageInputVal}
           on:keyup={(e) => {
             if (e.key === "Enter") {
-              sendMessage(conn, messageInputVal)();
+              sendMessage(messageInputVal)();
             }
           }}
         />
@@ -190,17 +183,10 @@
     </div>
 
     <div class="field">
-      <button
-        class="button is-primary"
-        on:click={sendMessage(conn, messageInputVal)}>Send</button
+      <button class="button is-primary" on:click={sendMessage(messageInputVal)}
+        >Send</button
       >
-      <button
-        class="button is-danger"
-        on:click={() => {
-          conn.close();
-          conn = null;
-        }}
-      >
+      <button class="button is-danger" on:click={(e) => chatHandler.close()}>
         Disconnect
       </button>
     </div>

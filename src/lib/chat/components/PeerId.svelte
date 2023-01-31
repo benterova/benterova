@@ -4,7 +4,7 @@
     export let small: boolean = false;
 
     // Apply is-size-7 class to the label if small is true
-    const labelClass = small ? "is-size-5" : "";
+    const labelClass = small ? "is-small" : "";
     
 </script>
 
