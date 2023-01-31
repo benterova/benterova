@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as THREE from "three";
-  import { T, Canvas, MeshInstance, Instance } from "@threlte/core";
+  import { T, Canvas, InstancedMesh, Instance } from "@threlte/core";
 
   const maxStars = 300;
 
@@ -16,7 +16,7 @@
   <Canvas>
     <T.PerspectiveCamera />
     <T.AmbientLight color={0xffffff} />
-    <MeshInstance mesh={stars}>
+    <InstancedMesh geometry={stars.geometry} material={stars.material}>
       {#each Array.from({ length: maxStars }) as _, i}
         console.log(i);
         <Instance
@@ -32,7 +32,7 @@
           )}
         />
       {/each}
-    </MeshInstance>
+    </InstancedMesh>
   </Canvas>
 </div>
 
@@ -46,7 +46,7 @@
     overflow: hidden;
     /* z-index: -1; */
   }
-  canvas{
+  canvas {
     width: 100%;
     height: 100%;
   }
