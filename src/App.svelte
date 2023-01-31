@@ -6,12 +6,15 @@
   import Header from "./lib/Header.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import ChatSection from "./lib/sections/ChatSection.svelte";
+  import StarfieldScene from "./lib/starfield/StarfieldScene.svelte";
 </script>
 
 <main>
   <Navbar />
   <div class="container">
-    <Header />
+    <Header showBackground>
+      <StarfieldScene />
+    </Header>
     <ChatSection />
   </div>
 </main>

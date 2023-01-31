@@ -59,9 +59,11 @@
   .timestamp {
     text-align: right;
     font-size: 0.8rem;
-    color: #aaa;
+    color: rgb(70, 70, 70);
   }
   .self-message {
     /* color: #00d1b2; */
+    font-weight: bolder;
+    font-style: italic;
   }
 </style>
