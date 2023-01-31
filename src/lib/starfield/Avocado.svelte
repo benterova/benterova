@@ -10,7 +10,7 @@
     materials: {
       "2256_Avocado_d": THREE.Material;
     };
-  }>("/gltf/Avocado.gltf");
+  }>(import.meta.env.BASE_URL + "/gltf/Avocado.gltf");
 
   const { size } = useThrelte();
 
