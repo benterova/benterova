@@ -62,6 +62,6 @@
     color: #aaa;
   }
   .self-message {
-    color: #00d1b2;
+    /* color: #00d1b2; */
   }
 </style>

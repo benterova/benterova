@@ -81,6 +81,11 @@
     };
   };
 
+  const toggleDisconnectModal = () => {
+    const modal = document.getElementById("disconnect-modal");
+    modal.classList.toggle("is-active");
+  };
+
   const handleDisconnect = () => {
     chatHandler = null;
     username = null;
@@ -98,6 +103,36 @@
 </script>
 
 <section class="chat">
+  <!-- Prompt if sure to disconnect -->
+  <div id="disconnect-modal" class="modal">
+    <div class="modal-background" on:click={() => toggleDisconnectModal()} />
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Are you sure?</p>
+        <button
+          class="delete"
+          aria-label="close"
+          on:click={() => toggleDisconnectModal()}
+        />
+      </header>
+      <section class="modal-card-body">
+        <p>Do you want to disconnect?</p>
+      </section>
+      <footer class="modal-card-foot">
+        <button
+          class="button is-success"
+          on:click={() => {
+            chatHandler.close();
+            toggleDisconnectModal();
+          }}>Yes</button
+        >
+        <button class="button" on:click={() => toggleDisconnectModal()}
+          >No</button
+        >
+      </footer>
+    </div>
+  </div>
+
   {#if errorMessage}
     <AlertComponent flashMessage={errorMessage} />
   {/if}
@@ -115,7 +150,7 @@
           placeholder={faker.internet.userName()}
           on:keyup={(e) => {
             if (e.key === "Enter") {
-              setUsername(this.value)();
+              setUsername(document.getElementById("username-field").value)();
             }
           }}
         />
@@ -124,7 +159,8 @@
     <div class="field">
       <button
         class="button is-primary"
-        on:click={() => setUsername(this.value)()}
+        on:click={() =>
+          setUsername(document.getElementById("username-field").value)()}
       >
         Set Username
       </button>
@@ -185,7 +221,7 @@
       <button class="button is-primary" on:click={sendMessage(messageInputVal)}
         >Send</button
       >
-      <button class="button is-danger" on:click={(e) => chatHandler.close()}>
+      <button class="button is-danger" on:click={() => toggleDisconnectModal()}>
         Disconnect
       </button>
     </div>
