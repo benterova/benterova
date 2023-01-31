@@ -1,10 +1,8 @@
 <script lang="ts">
   import * as THREE from "three";
   import { InstancedMesh, Instance, useFrame, useThrelte, Pass } from "@threlte/core";
-  import { RenderPixelatedPass } from "three/examples/jsm/postprocessing/RenderPixelatedPass";
 
-  const maxStars = 300;
-  const { renderer, scene, camera } = useThrelte();
+  const maxStars = 150;
 
 
   const starMesh = new THREE.Mesh(
@@ -53,7 +51,6 @@
     });
   });
 </script>
-<!-- <Pass pass={new RenderPixelatedPass(2, scene, $camera)} /> -->
 
 <InstancedMesh geometry={starMesh.geometry} material={starMesh.material}>
   {#each field as star}

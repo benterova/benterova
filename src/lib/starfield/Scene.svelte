@@ -9,7 +9,7 @@
 </script>
 
 <Canvas>
-  <!-- <Pass pass={new UnrealBloomPass(new Vector2(256, 256), 0.75, 2.25, 0.75)} /> -->
+  <Pass pass={new UnrealBloomPass(new Vector2(256, 256), 0.75, 2.25, 0.75)} />
 
   <T.PerspectiveCamera fov={90} primary />
   <T.AmbientLight color={0xffffff} />
