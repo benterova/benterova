@@ -138,6 +138,7 @@
   {/if}
 
   <h1 class="title">PeerChat</h1>
+  <p class="subtitle">A peer-to-peer example chat client.</p>
 
   {#if !username}
     <div class="field">

@@ -4,7 +4,7 @@
 
 <div class="columns">
   <div class="column is-one-third">
-    <div id="chat-section">
+    <div id="chat-section" class="box">
       <ChatComponent />
     </div>
   </div>
