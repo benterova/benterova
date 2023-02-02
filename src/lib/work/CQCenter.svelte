@@ -15,7 +15,8 @@
           acting lead software engineer of the application, and I was
           responsible for the development of the platform's front-end and
           back-end. I also educated the other developers on the application
-          structure, and how to use the technologies we were using.
+          structure, trained them on best practices, and helped them to become
+          familiar with our technology stack.
         </p>
       </div>
       <div class="block">
@@ -38,7 +39,7 @@
           <li>Redux</li>
           <li>GraphQL (Apollo)</li>
           <li>Webpack</li>
-          <li>Heroku</li>
+          <li>TypeScript</li>
           <li>CircleCI</li>
           <li>Cypress</li>
           <li>AWS Lambda</li>

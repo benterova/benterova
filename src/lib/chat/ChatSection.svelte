@@ -16,8 +16,8 @@
       Remote Peer ID (opening the same page in another tab will generate a new
       ID), choose a username, and click connect. Once connected, you can send
       messages to the other peer. The chat history is stored in the browser's
-      local storage, although currently can't be re-used due to using standard
-      PeerJS connections.
+      local storage, although currently can't be re-used due to using default
+      PeerJS connection negotiation servers.
     </p>
     <a
       href="https://github.com/benterova/benterova/tree/master/src/lib/chat"

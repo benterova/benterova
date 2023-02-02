@@ -14,7 +14,7 @@
 </svelte:head>
 <main>
   <!-- <Navbar /> -->
-  <div class="container is-fluid">
+  <div class="container">
     <Header showBackground>
       <Scene />
     </Header>

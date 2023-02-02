@@ -23,22 +23,26 @@
       <div class="block">
         <h3>Technologies Used:</h3>
         <ul>
-          <li>Ruby on Rails</li>
           <li>WordPress</li>
+          <li>WebFlow</li>
           <li>PHP</li>
           <li>MySQL</li>
           <li>Litmus</li>
           <li>MJML</li>
+          <li>Ruby on Rails</li>
           <li>Salesforce Pardot</li>
           <li>SharpSpring</li>
         </ul>
+      </div>
+      <div class="block">
+        <p><i>Spry Ideas has been closed as of 2020</i></p>
       </div>
     </div>
   </div>
   <div class="is-divider-vertical" />
   <div class="column is-one-third">
     <div id="work-section">
-      <figure class="image is-fullwidth">
+      <figure class="image is-centered">
         <img src="/img/spry.png" />
       </figure>
     </div>
