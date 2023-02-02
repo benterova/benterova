@@ -1,7 +1,13 @@
 <script lang="ts">
   import { useGltf } from "@threlte/extras";
   import * as THREE from "three";
-  import { Group, Object3DInstance, T, useFrame, useThrelte } from "@threlte/core";
+  import {
+    Group,
+    Object3DInstance,
+    T,
+    useFrame,
+    useThrelte,
+  } from "@threlte/core";
 
   const { gltf } = useGltf<{
     nodes: {
@@ -10,7 +16,8 @@
     materials: {
       "2256_Avocado_d": THREE.Material;
     };
-  }>(import.meta.env.BASE_URL + "/gltf/Avocado.gltf");
+  }>("/gltf/Avocado.gltf");
+  // }>(import.meta.env.BASE_URL + "/gltf/Avocado.gltf");
 
   const { size } = useThrelte();
 
@@ -19,19 +26,28 @@
       (material) => (material.wireframe = true)
     );
 
-    let rotation: THREE.Vector3 = new THREE.Vector3(0, 0, 0);
+  let rotation: THREE.Vector3 = new THREE.Vector3(0, 0, 0);
 
-    useFrame((state) => {
-      rotation.y += 0.01;
-      rotation = rotation;
-    });
-    
+  const { pointer } = useThrelte();
+
+  useFrame((state) => {
+    rotation.y += 0.01;
+    rotation = rotation;
+  });
+
+  // Tilt based on mouse position
+  useFrame((state) => {
+    const { width, height } = $size;
+    const tiltX = ($pointer.x / width) * 2 - 1;
+    const tiltY = ($pointer.y / height) * 2 - 1;
+    rotation.x = tiltX * 0.1;
+  });
 
   $: avocado = $gltf?.nodes["Avocado"];
 </script>
 
 {#if avocado}
-  <Group >
+  <Group>
     <Object3DInstance
       {rotation}
       object={avocado}

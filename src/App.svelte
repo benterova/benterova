@@ -4,28 +4,21 @@
   import "bulmaswatch/nuclear/bulmaswatch.min.css";
 
   import Header from "./lib/Header.svelte";
-  import Navbar from "./lib/Navbar.svelte";
-  import ChatSection from "./lib/sections/ChatSection.svelte";
+  import WorkSection from "./lib/sections/WorkSection.svelte";
   import Scene from "./lib/starfield/Scene.svelte";
-  import TodoSection from "./lib/todo/TodoSection.svelte";
+  import ProjectsSection from "./lib/sections/ProjectsSection.svelte";
 </script>
 
+<svelte:head>
+  <title>Ben Terova</title>
+</svelte:head>
 <main>
   <!-- <Navbar /> -->
   <div class="container is-fluid">
     <Header showBackground>
       <Scene />
     </Header>
-    <div class="block">
-      <h1 class="title has-text-centered m-6">Example Projects</h1>
-      <p class="subtitle has-text-centered">
-        This is a collection of example projects that I have created to
-        demonstrate different aspects of web development.
-      </p>
-    </div>
-    <div class="is-divider" />
-    <ChatSection />
-    <div class="is-divider" />
-    <TodoSection />
+    <WorkSection />
+    <ProjectsSection />
   </div>
 </main>

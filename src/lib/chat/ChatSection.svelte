@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ChatComponent from "../chat/ChatComponent.svelte";
+  import ChatComponent from "./ChatComponent.svelte";
 </script>
 
 <div class="columns">
