@@ -8,13 +8,13 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
+    <!-- <a class="navbar-item" href="https://bulma.io">
       <img
         src="https://bulma.io/images/bulma-logo.png"
         width="112"
         height="28"
       />
-    </a>
+    </a> -->
 
     <a
       role="button"
@@ -32,11 +32,11 @@
 
   <div id="navbar" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item"> Work </a>
+      <a class="navbar-item" href="#work"> Work </a>
 
-      <a class="navbar-item"> Side-Projects </a>
+      <a class="navbar-item" href="#projects"> Side-Projects </a>
 
-      <a class="navbar-item"> Contact </a>
+      <!-- <a class="navbar-item"> Contact </a> -->
     </div>
   </div>
 </nav>

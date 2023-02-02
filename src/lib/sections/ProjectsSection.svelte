@@ -3,7 +3,7 @@
   import TodoSection from "../todo/TodoSection.svelte";
 </script>
 
-<section class="section">
+<section class="section" id="projects">
   <div class="block">
     <h1 class="title has-text-centered m-6">Example Projects</h1>
     <p class="subtitle has-text-centered">Stuff I did for fun.</p>

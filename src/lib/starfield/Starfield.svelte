@@ -8,7 +8,7 @@
   const starMesh = new THREE.Mesh(
     new THREE.SphereGeometry(1),
     new THREE.MeshBasicMaterial({
-      color: "white",
+      color: "black",
     })
   );
 

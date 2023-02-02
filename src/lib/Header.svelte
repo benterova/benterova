@@ -6,9 +6,9 @@
   };
 </script>
 
-<section class="section">
+<section class="section main-hero">
   <div class="hero is-large">
-    <div class="hero-body">
+    <div class="hero-body has-text-">
       <p class="title">Ben Terova</p>
       <p class="subtitle">Software Engineer | Full Stack Developer</p>
       {#if showBackground}

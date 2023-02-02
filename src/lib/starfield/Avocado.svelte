@@ -21,10 +21,10 @@
 
   const { size } = useThrelte();
 
-  $: $gltf?.materials &&
-    Object.values($gltf.materials).forEach(
-      (material) => (material.wireframe = true)
-    );
+  // $: $gltf?.materials &&
+  //   Object.values($gltf.materials).forEach(
+  //     (material) => {material.wireframe = true;}
+  //   );
 
   let rotation: THREE.Vector3 = new THREE.Vector3(0, 0, 0);
 
