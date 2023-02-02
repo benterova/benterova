@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "echo benterova.com > ./dist/CNAME && npx gh-pages -d dist"
   },
   "devDependencies": {
     "@dimforge/rapier3d-compat": "^0.11.1",
