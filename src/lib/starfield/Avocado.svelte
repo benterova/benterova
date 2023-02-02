@@ -36,21 +36,24 @@
   });
 
   // Tilt based on mouse position
-  useFrame((state) => {
-    const { width, height } = $size;
-    const tiltX = ($pointer.x / width) * 2 - 1;
-    const tiltY = ($pointer.y / height) * 2 - 1;
-    rotation.x = tiltX * 0.1;
-  });
+  // useFrame((state) => {
+  //   const { width, height } = $size;
+  //   const tiltX = ($pointer.x / width) * 2 - 1;
+  //   const tiltY = ($pointer.y / height) * 2 - 1;
+  //   rotation.x = tiltX * 0.1;
+  // });
 
   $: avocado = $gltf?.nodes["Avocado"];
+
+  const geometry = new THREE.BoxGeometry(1, 1);
+  const material = new THREE.MeshBasicMaterial({ color: "grey" });
 </script>
 
-{#if avocado}
+{#if geometry && material}
   <Group>
-    <Object3DInstance
-      {rotation}
-      object={avocado}
+    <T.Mesh
+      {geometry}
+      {material}
       position={new THREE.Vector3(0.5, -0.3, 4)}
       scale={new THREE.Vector3(10, 10, 10)}
     />
