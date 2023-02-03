@@ -2,7 +2,6 @@
   import { T, Canvas, useThrelte, Pass } from "@threlte/core";
   import Starfield from "./Starfield.svelte";
   import Text from "./Text.svelte";
-  import Ship from "./Ship.svelte";
   import * as THREE from "three";
 
   import words from "./words.json";
@@ -63,10 +62,10 @@
   <T.Group position={[0, Math.min(1, $size.height / (3 / 1000)), 0]}>
     <!-- Header text -->
     <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} />
+      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble />
     </T.Group>
     <!-- Scroll text -->
-    <T.Group position={[0, (-1 + bob - ($size.height / 1000)), 0]}>
+    <T.Group position={[0, -1 + bob - $size.height / 1000, 0]}>
       <Text
         text={"see more please :)"}
         lookAtCamera

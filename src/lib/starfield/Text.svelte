@@ -7,6 +7,7 @@
   export let textHeight = 0.05;
   export let textSize = 0.4;
   export let text: string;
+  export let wobble: boolean = false;
   export let lookAtCamera: boolean = false;
 
   const loader = new FontLoader();
@@ -53,6 +54,11 @@
     });
   }
 
+  function oscillate(start, end, time) {
+    // return start + (end - start) * Math.sin(time / 100);
+    // Speed up occilation
+    return start + (end - start) * Math.sin(time * 2);
+  }
 
   if (lookAtCamera) {
     useFrame((state) => {
@@ -60,10 +66,20 @@
       textMesh.lookAt($camera.position);
     });
   }
+
+  let textRotation = new THREE.Vector3(0, 0, 0);
+  if (wobble) {
+    useFrame((state) => {
+      if (!textMesh) return;
+      textRotation.y = oscillate(-0.05, 0.005, state.clock.elapsedTime);
+      textRotation.z = oscillate(-0.05, 0.005, state.clock.elapsedTime);
+      textRotation = textRotation;
+    });
+  }
 </script>
 
 {#if textMesh}
-  <T.Group position={[0, 0, 0]}>
+  <T.Group position={[0, 0, 0]} rotation={textRotation.toArray()}>
     <T.Mesh
       geometry={textMesh.geometry}
       material={textMesh.material}
