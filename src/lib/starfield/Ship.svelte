@@ -1,47 +1,110 @@
 <script lang="ts">
-    // For now, a box that can move around when "i,j,k,l" are pressed
-    import { T, useFrame, useThrelte } from "@threlte/core";
-    import { writable } from "svelte/store";
-    import * as THREE from 'three';
+  // For now, a box that can move around when "i,j,k,l" are pressed
+  import { T, useFrame, useThrelte } from "@threlte/core";
+  import * as THREE from "three";
 
-    let x = 0;
-    let y = 0;
-    let z = 0;
-    let box: THREE.Mesh;
+  import Keydown from "svelte-keydown";
 
-    const store = writable({ x, y, z });
+  let position = new THREE.Vector3(0, 0, 0);
 
-    const { subscribe, set, update } = store;
+  let ship: THREE.Mesh;
+  let upHeld: boolean = false;
+  let downHeld: boolean = false;
+  let leftHeld: boolean = false;
+  let rightHeld: boolean = false;
 
-    const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        box = new THREE.Mesh(geometry, material);
-
-    // useFrame((state) => {
-    //     let elapsed = state.clock.getElapsedTime();
-    //     // Position with elapsed time
-    //     box.position.x = Math.sin(elapsed);
-    //     box.position.y = Math.cos(elapsed);
-    //     box.position.z = Math.sin(elapsed);
-
-    // });
-
-    function handleKeyDown(event) {
-        switch (event.key) {
-            case "i":
-                x += 1;
-                break;
-            case "k":
-                x -= 1;
-                break;
-            case "j":
-                y += 1;
-                break;
-            case "l":
-                y -= 1;
-                break;
-        }
+  function handleKeyDown(event) {
+    switch (event.key) {
+      case "i":
+        upHeld = true;
+        break;
+      case "k":
+        downHeld = true;
+        break;
+      case "j":
+        leftHeld = true;
+        break;
+      case "l":
+        rightHeld = true;
+        break;
     }
-    </script>
+  }
 
-    <T.Mesh {box} on:handleKeyDown />
+  const handleKeyUp = (event) => {
+    switch (event.key) {
+      case "i":
+        upHeld = false;
+        break;
+      case "k":
+        downHeld = false;
+        break;
+      case "j":
+        leftHeld = false;
+        break;
+      case "l":
+        rightHeld = false;
+        break;
+    }
+  };
+
+  const { size } = useThrelte();
+
+  const atMaxPosition = () => {
+    const maxXY = new THREE.Vector2(-1, 1);
+    // Return moveSpeed if the position plus moveSpeed is within bounds, else return 0
+    return maxXY.x < position.x + moveSpeed && position.x + moveSpeed < maxXY.y
+      ? moveSpeed
+      : 0;
+  };
+
+  const move = () => {
+    while (upHeld) {
+      position.y += atMaxPosition();
+      break;
+    }
+    while (downHeld) {
+      position.y -= atMaxPosition();
+      break;
+    }
+    while (leftHeld) {
+      position.x -= atMaxPosition();
+      break;
+    }
+    while (rightHeld) {
+      position.x += atMaxPosition();
+      break;
+    }
+  };
+
+  const moveSpeed = 0.05;
+  useFrame(() => {
+    while (upHeld) {
+      position.y += moveSpeed;
+      break;
+    }
+    while (downHeld) {
+      position.y -= moveSpeed;
+      break;
+    }
+    while (leftHeld) {
+      position.x -= moveSpeed;
+      break;
+    }
+    while (rightHeld) {
+      position.x += moveSpeed;
+      break;
+    }
+    position = position;
+  });
+
+  const onPointerMove = (event) => {
+    console.log("pointermove", event);
+  };
+</script>
+
+<Keydown on:keydown={handleKeyDown} on:keyup={handleKeyUp} />
+
+<T.Mesh position={position.toArray()}>
+  <T.BoxGeometry args={[1, 1, 1]} />
+  <T.MeshBasicMaterial color={"white"} />
+</T.Mesh>

@@ -1,19 +1,57 @@
 <script lang="ts">
-  import { T, Canvas, useThrelte } from "@threlte/core";
+  import { T, Canvas, useThrelte, Pass } from "@threlte/core";
   import Starfield from "./Starfield.svelte";
-  import Planet from "./Planet.svelte";
-  import Avocado from "./Avocado.svelte";
-    import Ship from "./Ship.svelte";
+  import Text from "./Text.svelte";
+  import Ship from "./Ship.svelte";
+  import * as THREE from "three";
+
+  import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
+  import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass";
+  import { RenderPixelatedPass } from "three/examples/jsm/postprocessing/RenderPixelatedPass";
+
+  const { renderer, scene, camera } = useThrelte();
+
+  let text = "look who it is...";
+
+  // Flicker a | at the end of the text
+  setInterval(() => {
+    text = text.endsWith("|") ? text.slice(0, -1) : text + "|";
+  }, 1000);
+
+  // Slowly bob the text up and down
+  let bob = 0;
+  setInterval(() => {
+    bob = bob === 0 ? 0.1 : 0;
+  }, 300);
+
+  // Rotate text side to side
+  let rotation;
 </script>
 
-<Canvas>
+<T.Scene>
+  <!-- <Pass pass={new GlitchPass(57)} /> -->
+  <Pass pass={new AfterimagePass(2)} />
+  <Pass pass={new RenderPixelatedPass(1.5, scene, $camera)} />
+
   <T.PerspectiveCamera fov={50} primary />
   <T.AmbientLight color={0xffffff} />
-  <!-- <Avocado /> -->
-  <Ship />
+  <T.Group position={[0, 0, 0]}>
+    <Text {text} />
+  </T.Group>
+  <T.Group position={[0, -2 + bob, 0]}>
+    <Text
+      text={"scroll for portfolio"}
+      lookAtCamera
+      textHeight={0.05}
+      textSize={0.3}
+    />
+    <T.Group position={[0, -0.75, 0]} lookAt={$camera.position}>
+      <Text text={"V"} lookAtCamera textHeight={0.03} textSize={0.2} />
+    </T.Group>
+  </T.Group>
+  <!-- <Ship /> -->
   <Starfield />
-  <Planet />
-</Canvas>
+</T.Scene>
 
 <style>
   /* canvas {
