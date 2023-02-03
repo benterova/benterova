@@ -44,9 +44,9 @@
 </script>
 
 <T.Scene>
-  <!-- <Pass pass={new GlitchPass(57)} /> -->
+  <Pass pass={new GlitchPass(57)} />
   <Pass pass={new AfterimagePass(2)} />
-  <Pass pass={new RenderPixelatedPass(1.5, scene, $camera)} />
+  <Pass pass={new RenderPixelatedPass(3.5, scene, $camera)} />
   <T.PerspectiveCamera fov={50} primary />
   <T.AmbientLight color={0xffffff} />
 
