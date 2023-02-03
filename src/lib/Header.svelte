@@ -36,6 +36,7 @@
   .main-hero {
     position: relative;
   }
+
   .hero-background {
     position: absolute;
     width: 100%;

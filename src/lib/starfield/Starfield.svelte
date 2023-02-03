@@ -8,7 +8,7 @@
     Pass,
   } from "@threlte/core";
 
-  const maxStars = 100;
+  const maxStars = 50;
 
   const starMesh = new THREE.Mesh(
     new THREE.BoxGeometry(1),
