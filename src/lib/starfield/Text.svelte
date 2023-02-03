@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as THREE from "three";
-  import { useFrame, T, useThrelte } from "@threlte/core";
+  import { useFrame, T } from "@threlte/core";
   import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry";
   import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 
@@ -12,11 +12,8 @@
   export let showBar = false;
 
   const loader = new FontLoader();
-  let textMesh: THREE.Mesh;
 
   let meshes: THREE.Mesh[] = [];
-
-  let { camera } = useThrelte();
 
   if (text) {
     loader.load("/Roboto_Regular.json", (font) => {
@@ -55,10 +52,7 @@
         newMesh.position.z = -cent.z;
 
         meshes = [...meshes, newMesh];
-        console.log("meshes", meshes);
       }
-
-      // planet.position.set(0, 0, -20);
     });
   }
 
@@ -70,13 +64,6 @@
   }
 
   function oscillate(start, end, time) {
-    // return   // let barVisible = false;
-    // if (showBar) {
-    //   setInterval(() => {
-    //     barVisible = !barVisible;
-    //   }, 1000);
-    // }start + (end - start) * Math.sin(time / 100);
-    // Speed up occilation
     return start + (end - start) * Math.sin(time * 2);
   }
 

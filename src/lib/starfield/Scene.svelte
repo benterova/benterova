@@ -30,6 +30,11 @@
   let backgroundBoxScale = new THREE.Vector3(75, 75, 50);
   let backgroundBoxPos = new THREE.Vector3(0, 0, 0);
   let backgroundBoxRotation = new THREE.Vector3(0, 0, 0);
+  // Make the GlitchPass less frequent
+  let showGlitch = false;
+  setInterval(() => {
+    showGlitch = !showGlitch;
+  }, 1000 * 3);
   // Spin the box around
   setInterval(() => {
     backgroundBoxRotation.x += 0.001;
@@ -39,10 +44,14 @@
 </script>
 
 <T.Scene>
-  <!-- <Pass pass={new GlitchPass(57)} /> -->
   <Pass pass={new RenderPixelatedPass(1.3, scene, $camera)} />
 
   <Pass pass={new AfterimagePass(0.5)} />
+
+  {#if showGlitch}
+    <Pass pass={new GlitchPass(1000)} />
+  {/if}
+
   <T.AmbientLight color={0xffffff} />
 
   <!-- Sphere for background -->
@@ -57,34 +66,22 @@
   <T.Group position={[0, Math.min(1, $size.height / (3 / 1000)), 0]}>
     <!-- Header text -->
     <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble showBar />
-    </T.Group>
-    <!-- Scroll text
-    <T.Group position={[0, 2.7 + bob - $size.height / 1000, 0]}>
-      <T.Group
-      position={[0, $size.height / (3 * 1000), 0]}
-      lookAt={$camera.position}
-    >
       <Text
-        text={"^"}
-        lookAtCamera
-        textHeight={0.03}
-        textSize={Math.min(0.3, $size.width / (5 * 1000))}
+        {text}
+        textSize={Math.min(0.3, $size.width / (2 * 1000))}
+        wobble
+        showBar
       />
     </T.Group>
-      <Text
-        text={"refresh for new text"}
-        lookAtCamera
-        textHeight={0.05}
-        textSize={Math.min(0.17, $size.width / (4 * 1000))}
-      />
 
-    </T.Group>
-  </T.Group>
-  <T.Group position={[0, Math.min(1, $size.height / (3 / 1000)), 0]}>
     <!-- Header text -->
     <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble showBar />
+      <Text
+        {text}
+        textSize={Math.min(0.3, $size.width / (2 * 1000))}
+        wobble
+        showBar
+      />
     </T.Group> -->
     <!-- Scroll text -->
     <T.Group position={[0, -1 + bob - $size.height / 1000, 0]}>
@@ -110,11 +107,3 @@
   <!-- <Ship /> -->
   <Starfield />
 </T.Scene>
-
-<style>
-  /* canvas {
-    width: 100%;
-    height: 100%;
-    background-color: wheat;
-  } */
-</style>
