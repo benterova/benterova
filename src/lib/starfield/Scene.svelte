@@ -15,11 +15,6 @@
   let text =
     words[Math.floor(Math.random() * words.length)]["phrase"].toLowerCase();
 
-  // Flicker a | at the end of the text
-  setInterval(() => {
-    text = text.endsWith("|") ? text.slice(0, -1) : text + "|";
-  }, 1000);
-
   // Slowly bob the text up and down
   let bob = 0;
   setInterval(() => {
@@ -45,8 +40,9 @@
 
 <T.Scene>
   <!-- <Pass pass={new GlitchPass(57)} /> -->
-  <Pass pass={new AfterimagePass(2)} />
-  <Pass pass={new RenderPixelatedPass(2.5, scene, $camera)} />
+  <Pass pass={new RenderPixelatedPass(1.3, scene, $camera)} />
+
+  <Pass pass={new AfterimagePass(0.5)} />
   <T.PerspectiveCamera fov={50} primary />
   <T.AmbientLight color={0xffffff} />
 
@@ -62,7 +58,7 @@
   <T.Group position={[0, Math.min(1, $size.height / (3 / 1000)), 0]}>
     <!-- Header text -->
     <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble />
+      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble showBar />
     </T.Group>
     <!-- Scroll text
     <T.Group position={[0, 2.7 + bob - $size.height / 1000, 0]}>
@@ -89,7 +85,7 @@
   <T.Group position={[0, Math.min(1, $size.height / (3 / 1000)), 0]}>
     <!-- Header text -->
     <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble />
+      <Text {text} textSize={Math.min(0.3, $size.width / (2 * 1000))} wobble showBar />
     </T.Group> -->
     <!-- Scroll text -->
     <T.Group position={[0, -1 + bob - $size.height / 1000, 0]}>
