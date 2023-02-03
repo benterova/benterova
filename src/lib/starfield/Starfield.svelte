@@ -13,7 +13,7 @@
   const starMesh = new THREE.Mesh(
     new THREE.BoxGeometry(1),
     new THREE.MeshBasicMaterial({
-      color: "white",
+      color: "#292929",
       wireframe: true,
     })
   );

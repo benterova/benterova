@@ -7,7 +7,7 @@
 </script>
 
 <section class="section main-hero">
-  <div class="hero is-large">
+  <div class="hero is-large is-fullheight">
     <div class="hero-body">
       <!-- <p class="title">Ben Terova</p>
       <p class="subtitle">Software Engineer | Full Stack Developer</p> -->

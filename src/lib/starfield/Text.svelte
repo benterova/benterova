@@ -5,7 +5,7 @@
   import { FontLoader } from "three/examples/jsm/loaders/FontLoader";
 
   export let textHeight = 0.05;
-  export let textSize = 0.6;
+  export let textSize = 0.4;
   export let text: string;
   export let lookAtCamera: boolean = false;
 
