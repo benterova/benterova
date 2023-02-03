@@ -9,6 +9,7 @@
   import ProjectsSection from "./lib/sections/ProjectsSection.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import HeaderCanvas from "./lib/starfield/HeaderCanvas.svelte";
+  import IntroSection from "./lib/sections/IntroSection.svelte";
 </script>
 
 <svelte:head>
@@ -20,6 +21,7 @@
     <HeaderCanvas />
   </Header>
   <div class="container">
+    <IntroSection />
     <WorkSection />
     <ProjectsSection />
   </div>

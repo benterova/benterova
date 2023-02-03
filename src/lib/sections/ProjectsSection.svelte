@@ -5,8 +5,7 @@
 
 <section class="section" id="projects">
   <div class="block">
-    <h1 class="title has-text-centered m-6">Example Projects</h1>
-    <p class="subtitle has-text-centered">Stuff I did for fun.</p>
+    <h1 class="title has-text-centered m-6">code i had fun with</h1>
   </div>
   <div class="is-divider" />
   <ChatSection />

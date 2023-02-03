@@ -5,8 +5,7 @@
 
 <section id="work" class="section">
   <div class="block">
-    <h1 class="title has-text-centered m-6">Professional Work</h1>
-    <p class="subtitle has-text-centered">Stuff I did for money.</p>
+    <h1 class="title has-text-centered m-6">code i got paid for</h1>
   </div>
   <div class="is-divider" />
   <CqCenter />

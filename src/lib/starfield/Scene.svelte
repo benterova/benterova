@@ -43,7 +43,6 @@
   <Pass pass={new RenderPixelatedPass(1.3, scene, $camera)} />
 
   <Pass pass={new AfterimagePass(0.5)} />
-  <T.PerspectiveCamera fov={50} primary />
   <T.AmbientLight color={0xffffff} />
 
   <!-- Sphere for background -->
