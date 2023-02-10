@@ -9,10 +9,17 @@
   import Navbar from "./lib/Navbar.svelte";
   import HeaderCanvas from "./lib/starfield/HeaderCanvas.svelte";
   import IntroSection from "./lib/sections/IntroSection.svelte";
+
+  const pageTitle = "Ben Terova";
+  let title;
+
+  setInterval(() => {
+    title = pageTitle + (document.title.endsWith("|") ? "" : "|");
+  }, 1000);
 </script>
 
 <svelte:head>
-  <title>Ben Terova</title>
+  <title>{title}</title>
 </svelte:head>
 <main>
   <Navbar />

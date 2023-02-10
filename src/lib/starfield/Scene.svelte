@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { T, Canvas, useThrelte, Pass } from "@threlte/core";
+  import { T, useThrelte, Pass } from "@threlte/core";
   import Starfield from "./Starfield.svelte";
   import Text from "./Text.svelte";
   import * as THREE from "three";
 
   import words from "./words.json";
 
-  import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
   import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass";
   import { RenderPixelatedPass } from "three/examples/jsm/postprocessing/RenderPixelatedPass";
 
-  const { renderer, scene, camera } = useThrelte();
+  const { scene, camera } = useThrelte();
 
   let text =
     words[Math.floor(Math.random() * words.length)]["phrase"].toLowerCase();
@@ -65,16 +64,6 @@
         showBar
       />
     </T.Group>
-
-    <!-- Header text -->
-    <T.Group position={[0, 0, 0]} rotation={[0, 0, 0]}>
-      <Text
-        {text}
-        textSize={Math.min(0.3, $size.width / (2 * 1000))}
-        wobble
-        showBar
-      />
-    </T.Group> -->
     <!-- Scroll text -->
     <T.Group position={[0, -1 + bob - $size.height / 1000, 0]}>
       <Text
