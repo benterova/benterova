@@ -5,7 +5,6 @@
 
   import Header from "./lib/Header.svelte";
   import WorkSection from "./lib/sections/WorkSection.svelte";
-  import Scene from "./lib/starfield/Scene.svelte";
   import ProjectsSection from "./lib/sections/ProjectsSection.svelte";
   import Navbar from "./lib/Navbar.svelte";
   import HeaderCanvas from "./lib/starfield/HeaderCanvas.svelte";

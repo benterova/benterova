@@ -30,11 +30,7 @@
   let backgroundBoxScale = new THREE.Vector3(75, 75, 50);
   let backgroundBoxPos = new THREE.Vector3(0, 0, 0);
   let backgroundBoxRotation = new THREE.Vector3(0, 0, 0);
-  // Make the GlitchPass less frequent
-  let showGlitch = false;
-  setInterval(() => {
-    showGlitch = !showGlitch;
-  }, 1000 * 3);
+
   // Spin the box around
   setInterval(() => {
     backgroundBoxRotation.x += 0.001;
@@ -47,10 +43,6 @@
   <Pass pass={new RenderPixelatedPass(1.3, scene, $camera)} />
 
   <Pass pass={new AfterimagePass(0.5)} />
-
-  {#if showGlitch}
-    <Pass pass={new GlitchPass(1000)} />
-  {/if}
 
   <T.AmbientLight color={0xffffff} />
 
