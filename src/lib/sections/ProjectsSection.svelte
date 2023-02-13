@@ -10,6 +10,6 @@
   </div>
   <div class="is-divider" />
   <ChatSection />
-  <div class="is-divider" />
-  <TodoSection />
+  <!-- <div class="is-divider" />
+  <TodoSection /> -->
 </section>
