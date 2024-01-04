@@ -7,7 +7,7 @@
   <div class="is-divider-vertical" />
   <div class="column">
     <h1 class="title">Cultural Intelligence Center</h1>
-    <h2 class="subtitle">Lead Software Engineer</h2>
+    <h2 class="subtitle">Senior & Lead Software Engineer</h2>
     <div class="content">
       <div class="block">
         <p>
