@@ -11,7 +11,7 @@
   import IntroSection from "./lib/sections/IntroSection.svelte";
 
   const pageTitle = "Ben Terova";
-  let title;
+  let title = pageTitle;
 
   setInterval(() => {
     title = pageTitle + (document.title.endsWith("|") ? "" : "|");
