@@ -6,7 +6,7 @@
     <div class="hero-body has-text-centered">
       <div class="container">
         <h1 class="title">Ben Terova</h1>
-        <h2 class="subtitle">internet user, code guy.</h2>
+        <h2 class="subtitle">i make software and i put it on the internet</h2>
         <a href="#work" class="button is-primary">money</a>
         <a href="#projects" class="button is-primary">fun</a>
       </div>

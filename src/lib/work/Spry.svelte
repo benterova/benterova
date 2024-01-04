@@ -1,4 +1,13 @@
-<div class="columns">
+<div class="columns" id="spry">
+  <div class="column is-one-third">
+    <div id="work-section">
+      <figure class="image is-centered">
+        <img src="/img/spry.png" />
+      </figure>
+    </div>
+  </div>
+  <div class="is-divider-vertical" />
+
   <div class="column">
     <h1 class="title">Spry Ideas</h1>
     <h2 class="subtitle">Lead Developer / Marketing Automation Specialist</h2>
@@ -37,14 +46,6 @@
       <div class="block">
         <p><i>Spry Ideas has been closed as of 2020</i></p>
       </div>
-    </div>
-  </div>
-  <div class="is-divider-vertical" />
-  <div class="column is-one-third">
-    <div id="work-section">
-      <figure class="image is-centered">
-        <img src="/img/spry.png" />
-      </figure>
     </div>
   </div>
 </div>

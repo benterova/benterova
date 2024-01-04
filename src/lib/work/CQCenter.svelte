@@ -1,4 +1,4 @@
-<div class="columns">
+<div class="columns" id="cqc">
   <div class="column is-one-third">
     <div id="work-section">
       <img src="/img/cqc-example.jpg" />
