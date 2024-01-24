@@ -3,7 +3,7 @@
 
 # Hi there 👋
 
-I'm a software engineer who enjoys building things that live on the internet. I aim to develop apps and websites that people use daily and enjoy using them.
+I'm a senior software engineer who enjoys building things that live on the internet. I aim to develop apps and websites that people use daily and enjoy using them.
 
 I work primarily with the following tech:
 - Ruby (and Rails)
