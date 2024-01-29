@@ -6,10 +6,6 @@
   import Header from "./lib/Header.svelte";
   import WorkSection from "./lib/sections/WorkSection.svelte";
   import ProjectsSection from "./lib/sections/ProjectsSection.svelte";
-  import Navbar from "./lib/Navbar.svelte";
-  import HeaderCanvas from "./lib/starfield/HeaderCanvas.svelte";
-  import IntroSection from "./lib/sections/IntroSection.svelte";
-
   const pageTitle = "Ben Terova";
   let title = pageTitle;
 

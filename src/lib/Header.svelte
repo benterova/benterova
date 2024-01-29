@@ -2,12 +2,6 @@
   import Fa from "svelte-fa";
 
   import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
-  export let showBackground: boolean = false;
-
-  const toggleBackground = () => {
-    showBackground = !showBackground;
-  };
 </script>
 
 <div class="hero is-primary is-medium">
