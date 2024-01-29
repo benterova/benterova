@@ -23,7 +23,7 @@
       href="https://github.com/benterova/benterova/tree/master/src/lib/chat"
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-4 button">View on GitHub</a
+      class="mt-4 button is-link">View on GitHub</a
     >
   </div>
 </div>

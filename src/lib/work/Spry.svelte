@@ -1,10 +1,9 @@
 <div class="columns" id="spry">
-  <div class="column is-one-third">
-    <div id="work-section">
-      <figure class="image is-centered">
-        <img src="/img/spry.png" />
-      </figure>
-    </div>
+  <div
+    class="column is-one-third has-text-centered"
+    style="display: flex; align-items: center; justify-content: center;"
+  >
+    <img src="/img/spry.png" />
   </div>
   <div class="is-divider-vertical" />
 

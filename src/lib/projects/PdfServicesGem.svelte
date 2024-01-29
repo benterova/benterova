@@ -42,17 +42,20 @@
             href="https://github.com/benterova/adobe-pdfservices-ruby"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 button">View on GitHub</a
+            class="mt-4 button is-primary">View on GitHub</a
         >
         <a
             href="https://rubygems.org/gems/adobe_pdfservices_ruby"
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-4 button">View on RubyGems.org</a
+            class="mt-4 button is-link">View on RubyGems.org</a
         >
     </div>
     <div class="is-divider-vertical" />
-    <div class="column is-one-third">
-        <img src="/img/adobe-logo-white.png" />
+    <div
+        class="column is-one-third has-text-centered"
+        style="display: flex; align-items: center; justify-content: center;"
+    >
+        <img src="/img/Adobe_Logo_Standard.svg" width="200px" />
     </div>
 </div>

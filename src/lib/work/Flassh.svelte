@@ -66,9 +66,10 @@
     </div>
   </div>
   <div class="is-divider-vertical" />
-  <div class="column is-one-third">
-    <div id="work-section">
-      <img src="/img/flassh.jpg" />
-    </div>
+  <div
+    class="column is-one-third has-text-centered"
+    style="display: flex; align-items: center; justify-content: center;"
+  >
+    <img src="/img/flassh.jpg" />
   </div>
 </div>

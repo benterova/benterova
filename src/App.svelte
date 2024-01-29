@@ -1,7 +1,7 @@
 <script lang="ts">
   import "bulma/css/bulma.css";
   import "bulma-divider/dist/css/bulma-divider.min.css";
-  import "bulmaswatch/nuclear/bulmaswatch.min.css";
+  import "bulmaswatch/materia/bulmaswatch.min.css";
 
   import Header from "./lib/Header.svelte";
   import WorkSection from "./lib/sections/WorkSection.svelte";
@@ -22,12 +22,8 @@
   <title>{title}</title>
 </svelte:head>
 <main>
-  <Navbar />
-  <Header showBackground>
-    <HeaderCanvas />
-  </Header>
+  <Header />
   <div class="container">
-    <IntroSection />
     <WorkSection />
     <ProjectsSection />
   </div>

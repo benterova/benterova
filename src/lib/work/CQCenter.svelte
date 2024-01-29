@@ -1,8 +1,9 @@
 <div class="columns" id="cqc">
-  <div class="column is-one-third">
-    <div id="work-section">
-      <img src="/img/cqc-example.jpg" />
-    </div>
+  <div
+    class="column is-one-third has-text-centered"
+    style="display: flex; align-items: center; justify-content: center;"
+  >
+    <img src="/img/cqc-example.jpg" />
   </div>
   <div class="is-divider-vertical" />
   <div class="column">

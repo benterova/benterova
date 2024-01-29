@@ -21,7 +21,6 @@
   }, 300);
 
   // Rotate text side to side
-  let rotation;
 
   let { size } = useThrelte();
 

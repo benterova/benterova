@@ -17,13 +17,6 @@
       wireframe: true,
     })
   );
-  // const starMesh = new THREE.Mesh(
-  //   new THREE.SphereGeometry(1),
-  //   new THREE.MeshBasicMaterial({
-  //     color: "white",
-  //   })
-  // );
-
   const setPosition = (star) => {
     // goes max, min
     const rangeX = new THREE.Vector2(-120, 120);

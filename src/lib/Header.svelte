@@ -1,4 +1,8 @@
 <script lang="ts">
+  import Fa from "svelte-fa";
+
+  import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
   export let showBackground: boolean = false;
 
   const toggleBackground = () => {
@@ -6,50 +10,62 @@
   };
 </script>
 
-<section class="section main-hero">
-  <div class="hero is-large is-fullheight">
-    <div class="hero-body">
-      <!-- <p class="title">Ben Terova</p>
-      <p class="subtitle">Software Engineer | Full Stack Developer</p> -->
-      {#if showBackground}
-        <div class="hero-background">
-          <slot />
+<div class="hero is-primary is-medium">
+  <article class="message">
+    <div class="message-body">
+      <p>
+        <strong>Notice:</strong> This site is a work in progress, and is currently
+        intended only to house a collection of the projects I've worked on.
+      </p>
+    </div>
+  </article>
+  <div class="hero-body">
+    <div class="container">
+      <div class="has-text-centered">
+        <h1 class="title">Ben Terova</h1>
+        <h2 class="subtitle">
+          Senior Software Engineer | Full Stack Developer | ❤️ Ruby
+        </h2>
+        <div
+          class="has-text-centered"
+          style="display: flex; justify-content: center; gap: 1rem;"
+        >
+          <h3><a href="mailto:ben@benterova.com">ben@benterova.com</a></h3>
+
+          <a
+            href="https://github.com/benterova"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="icon">
+              <Fa icon={faGithub} size="lg" />
+            </span>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/benterova/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span class="icon">
+              <Fa icon={faLinkedin} size="lg" />
+            </span>
+          </a>
         </div>
-      {/if}
-      <!-- <div class="threlte-toggle">
-        <div class="field">
-          <div class="control">
-            <a class="button is-primary" on:click={toggleBackground}
-              >Toggle 3D</a
-            >
-          </div>
-        </div>
-      </div> -->
+      </div>
     </div>
   </div>
-</section>
-
-<style>
-  .subtitle {
-    font-style: italic;
-  }
-  .main-hero {
-    position: relative;
-  }
-
-  .hero-background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
-    top: 0;
-    left: 0;
-  }
-  .threlte-toggle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 1rem;
-  }
-</style>
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li>
+            <a href="#work">Work</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
