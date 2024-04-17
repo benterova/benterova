@@ -255,7 +255,7 @@
     &lt;a href=&#34;#-flassh-photoboothshttpsflasshco--connect-app-rebuild&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     📸 &lt;a class=&#34;link&#34; href=&#34;https://flassh.co&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Flassh Photobooths&lt;/a&gt; | Connect App Rebuild
-&lt;/h2&gt;&lt;p&gt;I worked with the team at Flassh to migrate their existing Connect application from a C# application with Canon support to a Rust + Tauri powered application leveraging libgphoto2 to support most cameras, in addition to Mac and Linux support for planned integrated devices.&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;I migrated their existing Connect application from a C# application with Canon support to a Rust + Tauri powered application leveraging libgphoto2 to support most cameras, in addition to Mac and Linux support for planned integrated devices.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Features&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Additional support for DSLR&amp;rsquo;s from most makes and most models via libgphoto2&lt;/li&gt;

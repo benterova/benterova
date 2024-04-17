@@ -39,7 +39,7 @@ A gem I made primarily for the PDF parsing and extraction used by [betterjob.app
 ---
 
 ## 📸 [Flassh Photobooths](https://flassh.co) | Connect App Rebuild
-I worked with the team at Flassh to migrate their existing Connect application from a C# application with Canon support to a Rust + Tauri powered application leveraging libgphoto2 to support most cameras, in addition to Mac and Linux support for planned integrated devices.
+I migrated their existing Connect application from a C# application with Canon support to a Rust + Tauri powered application leveraging libgphoto2 to support most cameras, in addition to Mac and Linux support for planned integrated devices.
 
 **Features**
 - Additional support for DSLR's from most makes and most models via libgphoto2
