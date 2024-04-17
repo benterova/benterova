@@ -10,10 +10,10 @@ keywords = 'ruby,rails,development,software engineering'
 
 It's nice to have you here. My name is Ben and I've been building full stack applications for most of my life. I currently mostly focus on Ruby on Rails, though I've loved working with various platforms and languages throughout my career. 
 
-**TL:DR:** I taught myself to write Minecraft server mods, worked at a few unique and interesting companies, fell in love with Ruby on Rails, and ended up building web applications for a living.
+**TL:DR:** I learned to write Minecraft server mods, worked at a few unique and interesting companies, fell in love with Ruby on Rails, and ended up building web applications for a living.
 
 
-#### 13 Year Old Minecraft Addict
+#### Minecraft Mods & Server Management
 I had started my development journey with Java and Minecraft, creating server-side Bukkit mods to enhance my player's experience and had my first small adventure into the world of running a Minecraft server business when I was 13. With some of my more popular servers averaging around 300 players, with peaks from 1k-2k. I had created multiple server networks offering some of the more traditional server experiences in addition to custom gamemodes developed by me. One of these custom minigames was a FPS class-based shooter within Minecraft, utilizing custom code and Resource Packs to create a multiplayer shooter.
 
 My cousin and I would run this server from my grandmother's dining room on a fold-out table, with our monitors opposite each other, with him responsible for moderation, player experience, and marketing, while I focused on the technical aspects, networking, server management, development, e-commerce and optimization.

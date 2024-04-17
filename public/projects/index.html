@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# Projects Coming soon. It&rsquo;ll be worth it 😉">
-<title></title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="# Projects # 💼 betterjob.app A opportunity management platform utilizing OpenAI&rsquo;s GPT API to optimize resume content and cover letters for job options. Features Opportunity job description parsing and keyword extraction Accurate resume PDF parsing &amp; autofill Automatically selects relevant experience and skills based on the opportunity. Tech Stack Rails 7 Hotwire Stimulus Devise Sidekiq PostgreSQL Adobe PDFServices ChatGPT API # 💎 Adobe PDF Services Ruby Gem A gem I made primarily for the PDF parsing and extraction used by betterjob.">
+<meta name="keywords" content="rails,resume,optimization,chatgpt,ai,job, search,stimulus,devise"><title></title>
 
 <link rel='canonical' href='http://localhost:1313/projects/'>
 
 <link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="">
-<meta property='og:description' content="# Projects Coming soon. It&rsquo;ll be worth it 😉">
+<meta property='og:description' content="# Projects # 💼 betterjob.app A opportunity management platform utilizing OpenAI&rsquo;s GPT API to optimize resume content and cover letters for job options. Features Opportunity job description parsing and keyword extraction Accurate resume PDF parsing &amp; autofill Automatically selects relevant experience and skills based on the opportunity. Tech Stack Rails 7 Hotwire Stimulus Devise Sidekiq PostgreSQL Adobe PDFServices ChatGPT API # 💎 Adobe PDF Services Ruby Gem A gem I made primarily for the PDF parsing and extraction used by betterjob.">
 <meta property='og:url' content='http://localhost:1313/projects/'>
 <meta property='og:site_name' content='Ben Terova'>
 <meta property='og:type' content='article'><meta property='article:section' content='' />
 <meta name="twitter:title" content="">
-<meta name="twitter:description" content="# Projects Coming soon. It&rsquo;ll be worth it 😉">
+<meta name="twitter:description" content="# Projects # 💼 betterjob.app A opportunity management platform utilizing OpenAI&rsquo;s GPT API to optimize resume content and cover letters for job options. Features Opportunity job description parsing and keyword extraction Accurate resume PDF parsing &amp; autofill Automatically selects relevant experience and skills based on the opportunity. Tech Stack Rails 7 Hotwire Stimulus Devise Sidekiq PostgreSQL Adobe PDFServices ChatGPT API # 💎 Adobe PDF Services Ruby Gem A gem I made primarily for the PDF parsing and extraction used by betterjob.">
   
 
 
@@ -67,7 +67,7 @@
         
         <div class="site-meta">
             <h1 class="site-name"><a href="/">Ben Terova</a></h1>
-            <h2 class="site-description">Senior Full-Stack Engineer | ❤️ Ruby</h2>
+            <h2 class="site-description">Software Engineer | ❤️ Ruby</h2>
         </div>
     </header><ol class="menu-social">
             
@@ -192,7 +192,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    3 minute read
                 </time>
             </div>
         
@@ -210,7 +210,88 @@
     <h1 id="projects">
     <a href="#projects" class="header-anchor">#</a>
     Projects
-</h1><p>Coming soon. It&rsquo;ll be worth it 😉</p>
+</h1><h2 id="-betterjobapphttpsbetterjobapp">
+    <a href="#-betterjobapphttpsbetterjobapp" class="header-anchor">#</a>
+    💼 <a class="link" href="https://betterjob.app"  target="_blank" rel="noopener"
+    >betterjob.app</a>
+</h2><p>A opportunity management platform utilizing OpenAI&rsquo;s GPT API to optimize resume content and cover letters for job options.</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Opportunity job description parsing and keyword extraction</li>
+<li>Accurate resume PDF parsing &amp; autofill</li>
+<li>Automatically selects relevant experience and skills based on the opportunity.</li>
+</ul>
+<p><strong>Tech Stack</strong></p>
+<ul>
+<li>Rails 7</li>
+<li>Hotwire</li>
+<li>Stimulus</li>
+<li>Devise</li>
+<li>Sidekiq</li>
+<li>PostgreSQL</li>
+<li>Adobe PDFServices</li>
+<li>ChatGPT API</li>
+</ul>
+<hr>
+<h2 id="-adobe-pdf-services-ruby-gemhttpsgithubcombenterovaadobe-pdfservices-ruby">
+    <a href="#-adobe-pdf-services-ruby-gemhttpsgithubcombenterovaadobe-pdfservices-ruby" class="header-anchor">#</a>
+    💎 <a class="link" href="https://github.com/benterova/adobe-pdfservices-ruby"  target="_blank" rel="noopener"
+    >Adobe PDF Services Ruby Gem</a>
+</h2><p>A gem I made primarily for the PDF parsing and extraction used by <a class="link" href="https://betterjob.app"  target="_blank" rel="noopener"
+    >betterjob.app</a>. Forked from another project, I wasn&rsquo;t a fan of heavily repeat logic used and it also didn&rsquo;t support the newer PDF extraction operation. I rebuilt almost all of it using more object-oriented principles and adapted the tests to fit the usage patterns I expected to have.</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Supports passing a block that will recieve both the operation status and the result that is called as the operation progresses, so applications can react to the status in addition to the result.</li>
+<li>Cleans up uploaded asset to save storage after extraction</li>
+<li>Support for almost all AdobePDFServices operations</li>
+<li>Nice and DRY :)</li>
+</ul>
+<hr>
+<h2 id="-flassh-photoboothshttpsflasshco--connect-app-rebuild">
+    <a href="#-flassh-photoboothshttpsflasshco--connect-app-rebuild" class="header-anchor">#</a>
+    📸 <a class="link" href="https://flassh.co"  target="_blank" rel="noopener"
+    >Flassh Photobooths</a> | Connect App Rebuild
+</h2><p>I worked with the team at Flassh to migrate their existing Connect application from a C# application with Canon support to a Rust + Tauri powered application leveraging libgphoto2 to support most cameras, in addition to Mac and Linux support for planned integrated devices.</p>
+<p><strong>Features</strong></p>
+<ul>
+<li>Additional support for DSLR&rsquo;s from most makes and most models via libgphoto2</li>
+<li>Built with Tauri, Leptos, and Rust to provide multi-platform support with high performance</li>
+<li>Multiple bug fixes on the original application, including camera disconnect/reconnect support, camera selection, and status indication</li>
+</ul>
+<hr>
+<h2 id="konveyoriohttpskonveyorio">
+    <a href="#konveyoriohttpskonveyorio" class="header-anchor">#</a>
+    <a class="link" href="https://konveyor.io"  target="_blank" rel="noopener"
+    >konveyor.io</a>
+</h2><p>Contracted by Red Hat to help them update their community site with updated Kubernetes information, new pages, and relevant Kubecon information prior to Kubecon Amsterdam.</p>
+<p><strong>Tech Stack</strong></p>
+<ul>
+<li>Gatsby</li>
+<li>React</li>
+<li>TailwindCSS</li>
+</ul>
+<hr>
+<h1 id="open-source">
+    <a href="#open-source" class="header-anchor">#</a>
+    Open Source
+</h1><p>As of right now most of my open source work has been bug fixes and more features, although at some point I plan on getting more involved</p>
+<h3 id="teams-for-linuxhttpsgithubcomismaelmartinezteams-for-linuxpull1082">
+    <a href="#teams-for-linuxhttpsgithubcomismaelmartinezteams-for-linuxpull1082" class="header-anchor">#</a>
+    <a class="link" href="https://github.com/IsmaelMartinez/teams-for-linux/pull/1082"  target="_blank" rel="noopener"
+    >teams-for-linux</a>
+</h3><p>Added a flag to enable the application to follow the system theme, using Electron, IPC, and a connection to the inner Teams app.</p>
+<hr>
+<h3 id="ammohttpsgithubcomcyberrumorammopull30">
+    <a href="#ammohttpsgithubcomcyberrumorammopull30" class="header-anchor">#</a>
+    <a class="link" href="https://github.com/cyberrumor/ammo/pull/30"  target="_blank" rel="noopener"
+    >AMMO</a>
+</h3><p>Added support for the Steam installation to be automatically detected when installed via Flatpak, and added functionality to ask the user which version they&rsquo;d like to manage.</p>
+<hr>
+<h3 id="city-of-detroit-crime-viewerhttpsgithubcomcityofdetroitcrime-viewerpull80">
+    <a href="#city-of-detroit-crime-viewerhttpsgithubcomcityofdetroitcrime-viewerpull80" class="header-anchor">#</a>
+    <a class="link" href="https://github.com/CityOfDetroit/crime-viewer/pull/80"  target="_blank" rel="noopener"
+    >City of Detroit <code>crime-viewer</code></a>
+</h3><p>Fixed a crash that would occur when trying to view an arrest on an Interection where the offense wasn&rsquo;t included in the response. Also adjusted the title and favicon away from <code>create-react-app</code> default.</p>
 
 </section>
 

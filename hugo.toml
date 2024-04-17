@@ -4,7 +4,7 @@ title = 'Ben Terova'
 theme = 'stack'
 
 [Params.Sidebar]
-subtitle = 'Senior Full-Stack Engineer | ❤️ Ruby'
+subtitle = 'Software Engineer | ❤️ Ruby'
 avatar.src = 'https://avatars.githubusercontent.com/u/1569138'
 avatar.local = false
 emoji = '🐧'
