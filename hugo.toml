@@ -1,0 +1,27 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Ben Terova'
+theme = 'stack'
+
+[Params.Sidebar]
+subtitle = 'Senior Full-Stack Engineer | ❤️ Ruby'
+avatar.src = 'https://avatars.githubusercontent.com/u/1569138'
+avatar.local = false
+emoji = '🐧'
+
+[Params.Footer]
+customText = 'ben@benterova.com'
+
+[menu]
+[[menu.social]]
+    name = "LinkedIn"
+    url = "https://linkedin.com/in/benterova"
+    [menu.social.params]
+        icon = "linkedin"
+        newTab = true
+[[menu.social]]
+    name = "GitHub"
+    url = "https://github.com/benterova"
+    [menu.social.params]
+        icon = "github"
+        newTab = true
