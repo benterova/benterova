@@ -2,7 +2,7 @@
 title = 'The Long(ish) Journey.'
 description = "Here's how I got wrapped up in all this coding biz"
 date = 2024-04-17T13:15:59-04:00
-draft = true
+draft = false
 keywords = 'ruby,rails,development,software engineering'
 +++
 
