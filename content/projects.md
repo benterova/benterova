@@ -6,3 +6,5 @@ menu:
 ---
 
 # Projects
+
+Coming soon. It'll be worth it 😉

@@ -3,13 +3,14 @@ title = 'The Long(ish) Journey.'
 description = "Here's how I got wrapped up in all this coding biz"
 date = 2024-04-17T13:15:59-04:00
 draft = true
+keywords = 'ruby,rails,development,software engineering'
 +++
 
 ## Welcome!
 
 It's nice to have you here. My name is Ben and I've been building full stack applications for most of my life. I currently mostly focus on Ruby on Rails, though I've loved working with various platforms and languages throughout my career. 
 
-**TL:DR:** I taught myself to write Minecraft server mods, worked at a few unique and interesting companies, learned a lot about computers, and ended up building web applications for a living.
+**TL:DR:** I taught myself to write Minecraft server mods, worked at a few unique and interesting companies, fell in love with Ruby on Rails, and ended up building web applications for a living.
 
 
 #### 13 Year Old Minecraft Addict
@@ -26,7 +27,9 @@ Through this, I also started to get involved in web development and integrating 
 #### My high school's tech closet.
 I decided to go to high school at FlexTech in my hometown of Brighton, Michigan as they had a (for the time) technology-friendly and project-based approach to education, and I thought it would be an opportunity to use my existing interests and skills to help me end up where I wanted to be -- writing code for a living.
 
-During high school, I tried my best to use programming as my means to complete as many of my classes as possible, as the teachers were willing to allow me to use this unorthadox approach to demonstrate my knowledge so long as it remained relevant to the task at hand. As such, I used programming for most of my math classes and wrote small Processing scripts to demonstrate whatever topic we were studying at the time. I also used programming as the foundation of a few other of my classes, using application ideas to be the foundation of business plans for civics, writing Processing demos in my programming classes, and I began working with the administration to propose a learning management platform specialized in the unique challenge project based education systems have. I started writing this in pure PHP with no framework, and thankfully it never started getting used because it probably would have been a disaster due to how poorly written it was.
+During high school, I tried my best to use programming as my means to complete as many of my classes as possible, as the teachers were willing to allow me to use this unorthadox approach to demonstrate my knowledge so long as it remained relevant to the task at hand. As such, I used programming for most of my math classes and wrote small Processing scripts to demonstrate whatever topic we were studying at the time. 
+
+I also used programming as the foundation of a few other of my classes, using application ideas to be the foundation of business plans for civics, writing Processing demos in my programming classes, and I began working with the administration to propose a learning management platform specialized in the unique challenge project based education systems have. I started writing this in pure PHP with no framework, and thankfully it never started getting used because it probably would have been a disaster due to how poorly written it was.
 
 Around this time, I also started to hang around the IT room and help the IT guy at the time repair broken computers, iPads, or whatever other school property was around and not functioning. I learned a lot about physical device repair, networking and network security.
 

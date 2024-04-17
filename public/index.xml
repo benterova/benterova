@@ -16,7 +16,7 @@
     &lt;a href=&#34;#welcome&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Welcome!
 &lt;/h2&gt;&lt;p&gt;It&amp;rsquo;s nice to have you here. My name is Ben and I&amp;rsquo;ve been building full stack applications for most of my life. I currently mostly focus on Ruby on Rails, though I&amp;rsquo;ve loved working with various platforms and languages throughout my career.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;TL:DR:&lt;/strong&gt; I taught myself to write Minecraft server mods, worked at a few unique and interesting companies, learned a lot about computers, and ended up building web applications for a living.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;TL:DR:&lt;/strong&gt; I taught myself to write Minecraft server mods, worked at a few unique and interesting companies, fell in love with Ruby on Rails, and ended up building web applications for a living.&lt;/p&gt;
 &lt;h4 id=&#34;13-year-old-minecraft-addict&#34;&gt;
     &lt;a href=&#34;#13-year-old-minecraft-addict&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     13 Year Old Minecraft Addict
@@ -29,7 +29,8 @@
     &lt;a href=&#34;#my-high-schools-tech-closet&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     My high school&amp;rsquo;s tech closet.
 &lt;/h4&gt;&lt;p&gt;I decided to go to high school at FlexTech in my hometown of Brighton, Michigan as they had a (for the time) technology-friendly and project-based approach to education, and I thought it would be an opportunity to use my existing interests and skills to help me end up where I wanted to be &amp;ndash; writing code for a living.&lt;/p&gt;
-&lt;p&gt;During high school, I tried my best to use programming as my means to complete as many of my classes as possible, as the teachers were willing to allow me to use this unorthadox approach to demonstrate my knowledge so long as it remained relevant to the task at hand. As such, I used programming for most of my math classes and wrote small Processing scripts to demonstrate whatever topic we were studying at the time. I also used programming as the foundation of a few other of my classes, using application ideas to be the foundation of business plans for civics, writing Processing demos in my programming classes, and I began working with the administration to propose a learning management platform specialized in the unique challenge project based education systems have. I started writing this in pure PHP with no framework, and thankfully it never started getting used because it probably would have been a disaster due to how poorly written it was.&lt;/p&gt;
+&lt;p&gt;During high school, I tried my best to use programming as my means to complete as many of my classes as possible, as the teachers were willing to allow me to use this unorthadox approach to demonstrate my knowledge so long as it remained relevant to the task at hand. As such, I used programming for most of my math classes and wrote small Processing scripts to demonstrate whatever topic we were studying at the time.&lt;/p&gt;
+&lt;p&gt;I also used programming as the foundation of a few other of my classes, using application ideas to be the foundation of business plans for civics, writing Processing demos in my programming classes, and I began working with the administration to propose a learning management platform specialized in the unique challenge project based education systems have. I started writing this in pure PHP with no framework, and thankfully it never started getting used because it probably would have been a disaster due to how poorly written it was.&lt;/p&gt;
 &lt;p&gt;Around this time, I also started to hang around the IT room and help the IT guy at the time repair broken computers, iPads, or whatever other school property was around and not functioning. I learned a lot about physical device repair, networking and network security.&lt;/p&gt;
 &lt;h4 id=&#34;entering-the-workforce&#34;&gt;
     &lt;a href=&#34;#entering-the-workforce&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
@@ -55,17 +56,6 @@
 &lt;p&gt;Afterwards, the contract with Atomic had expired, and I began my journey of maintaining and adding new features to the Cultural Intelligence Center&amp;rsquo;s learning management platform, where I&amp;rsquo;ve been so far (2024). I&amp;rsquo;ve since worked primarily within the Ruby on Rails environment professionally for the last 4 years, with various other side projects either built using Rails or JS.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m excited to see how the journey will continue, and will continue to update this little blog thing as I learn new stuff! Computers Rule!&lt;/p&gt;
 </description>
-        </item>
-        <item>
-        <title></title>
-        <link>http://localhost:1313/about/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>http://localhost:1313/about/</guid>
-        <description>&lt;h1 id=&#34;projects&#34;&gt;
-    &lt;a href=&#34;#projects&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
-    Projects
-&lt;/h1&gt;</description>
         </item>
         <item>
         <title></title>
@@ -213,6 +203,18 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Tech Stack:&lt;/strong&gt; HTML/CSS, JavaScript, SquareSpace, WordPress.&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>http://localhost:1313/projects/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/projects/</guid>
+        <description>&lt;h1 id=&#34;projects&#34;&gt;
+    &lt;a href=&#34;#projects&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Projects
+&lt;/h1&gt;&lt;p&gt;Coming soon. It&amp;rsquo;ll be worth it 😉&lt;/p&gt;
 </description>
         </item>
         
