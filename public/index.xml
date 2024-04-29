@@ -131,7 +131,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;dockerfile&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;Dockerfile&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;volumes&lt;/span&gt;:
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;ollama_data:/app&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this setup you&amp;rsquo;ll have &lt;code&gt;localhost:11434&lt;/code&gt; be the location of the server within your development container, and the Rails specific method mentioned&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this setup you&amp;rsquo;ll have &lt;code&gt;localhost:11434&lt;/code&gt; be the location of the server within your development container, and the Rails specific method mentioned to access this instance should work out of the box for you.&lt;/p&gt;
 </description>
         </item>
         <item>
