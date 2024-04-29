@@ -15,7 +15,10 @@
         <description>&lt;img src="http://localhost:1313/post/ollama-on-render-com/render.png" alt="Featured image of post Deploying ollama on Render.com Private Services" /&gt;&lt;h1 id=&#34;deploying-ollama-on-rendercom-private-services&#34;&gt;
     &lt;a href=&#34;#deploying-ollama-on-rendercom-private-services&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
     Deploying ollama on Render.com Private Services
-&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;ve been working on my resume and cover letter optimization application &lt;a class=&#34;link&#34; href=&#34;https://betterjob.app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;/h1&gt;&lt;h3 id=&#34;note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying&#34;&gt;
+    &lt;a href=&#34;#note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Note: For most smaller cases, llama3 is too expensive to run on Render private services. It&amp;rsquo;s likely better to run on an API, however this is how you can do it if you&amp;rsquo;re interested in trying.
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;ve been working on my resume and cover letter optimization application &lt;a class=&#34;link&#34; href=&#34;https://betterjob.app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;betterjob.app&lt;/a&gt;, and I wanted to switch from ChatGPT to a private service running &lt;a class=&#34;link&#34; href=&#34;https://github.com/ollama/ollama&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;ollama&lt;/a&gt; to have more control over my models, parameters, and potentially even costs? (I might update this post with information relating to potential cost savings after I&amp;rsquo;ve run some tests. Might end up being more expensive for my use case though.)&lt;/p&gt;
 &lt;p&gt;The provided Dockerfile works, however it doesn&amp;rsquo;t come with any models preinstalled. We&amp;rsquo;ll need to modify the Dockerfile of the ollama build process to download llama3 after the container has finished building.&lt;/p&gt;

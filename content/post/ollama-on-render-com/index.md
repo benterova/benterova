@@ -9,6 +9,9 @@ keywords = 'ollama,docker,render,deployment,development'
 
 # Deploying ollama on Render.com Private Services
 
+
+### Note: For most smaller cases, llama3 is too expensive to run on Render private services. It's likely better to run on an API, however this is how you can do it if you're interested in trying.
+
 I've been working on my resume and cover letter optimization application [betterjob.app](https://betterjob.app), and I wanted to switch from ChatGPT to a private service running [ollama](https://github.com/ollama/ollama) to have more control over my models, parameters, and potentially even costs? (I might update this post with information relating to potential cost savings after I've run some tests. Might end up being more expensive for my use case though.)
 
 The provided Dockerfile works, however it doesn't come with any models preinstalled. We'll need to modify the Dockerfile of the ollama build process to download llama3 after the container has finished building.

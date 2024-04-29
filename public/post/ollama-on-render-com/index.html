@@ -240,7 +240,10 @@
     <h1 id="deploying-ollama-on-rendercom-private-services">
     <a href="#deploying-ollama-on-rendercom-private-services" class="header-anchor">#</a>
     Deploying ollama on Render.com Private Services
-</h1><p>I&rsquo;ve been working on my resume and cover letter optimization application <a class="link" href="https://betterjob.app"  target="_blank" rel="noopener"
+</h1><h3 id="note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying">
+    <a href="#note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying" class="header-anchor">#</a>
+    Note: For most smaller cases, llama3 is too expensive to run on Render private services. It&rsquo;s likely better to run on an API, however this is how you can do it if you&rsquo;re interested in trying.
+</h3><p>I&rsquo;ve been working on my resume and cover letter optimization application <a class="link" href="https://betterjob.app"  target="_blank" rel="noopener"
     >betterjob.app</a>, and I wanted to switch from ChatGPT to a private service running <a class="link" href="https://github.com/ollama/ollama"  target="_blank" rel="noopener"
     >ollama</a> to have more control over my models, parameters, and potentially even costs? (I might update this post with information relating to potential cost savings after I&rsquo;ve run some tests. Might end up being more expensive for my use case though.)</p>
 <p>The provided Dockerfile works, however it doesn&rsquo;t come with any models preinstalled. We&rsquo;ll need to modify the Dockerfile of the ollama build process to download llama3 after the container has finished building.</p>
