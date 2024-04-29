@@ -2,6 +2,7 @@
 title = 'Deploying ollama on Render.com Private Services'
 description = "A short guide on running ollama Docker image on Render.com private services, and connecting to it from your application"
 date = 2024-04-29
+image = render.png
 draft = false
 keywords = 'ollama,docker,render,deployment,development'
 +++
