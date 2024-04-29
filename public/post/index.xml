@@ -6,7 +6,66 @@
         <description>Recent content in Posts on Ben Terova</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 17 Apr 2024 13:15:59 -0400</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Deploying ollama on Render.com Private Services</title>
+        <link>http://localhost:1313/post/ollama-on-render-com/</link>
+        <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/ollama-on-render-com/</guid>
+        <description>&lt;img src="http://localhost:1313/post/ollama-on-render-com/render.png" alt="Featured image of post Deploying ollama on Render.com Private Services" /&gt;&lt;h1 id=&#34;deploying-ollama-on-rendercom-private-services&#34;&gt;
+    &lt;a href=&#34;#deploying-ollama-on-rendercom-private-services&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Deploying ollama on Render.com Private Services
+&lt;/h1&gt;&lt;p&gt;I&amp;rsquo;ve been working on my resume and cover letter optimization application &lt;a class=&#34;link&#34; href=&#34;https://betterjob.app&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;betterjob.app&lt;/a&gt;, and I wanted to switch from ChatGPT to a private service running &lt;a class=&#34;link&#34; href=&#34;https://github.com/ollama/ollama&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ollama&lt;/a&gt; to have more control over my models, parameters, and potentially even costs? (I might update this post with information relating to potential cost savings after I&amp;rsquo;ve run some tests. Might end up being more expensive for my use case though.)&lt;/p&gt;
+&lt;p&gt;Thanks to the Dockerfile found within the ollama repository, deploying to Render is very easy.&lt;/p&gt;
+&lt;h3 id=&#34;blueprint-file&#34;&gt;
+    &lt;a href=&#34;#blueprint-file&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    Blueprint File
+&lt;/h3&gt;&lt;p&gt;I&amp;rsquo;m using the &lt;a class=&#34;link&#34; href=&#34;https://docs.render.com/blueprint-spec&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Render Blueprint YAML&lt;/a&gt; to define and build my services through code. To create the private service that will be running the ollama Docker image, I added the following to my &lt;code&gt;render.yaml&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;pserv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;your-app-ollama&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;region&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;oregon&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;runtime&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;url&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;docker.io/ollama/ollama&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;plan&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;starter&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;With this setup, Render will pull the ollama image (It appears that Render already has this cached as well, so deployment is very quick), autodetect the port and finalize deploying the image.&lt;/p&gt;
+&lt;p&gt;To access the created ollama service in our main application, we can &lt;a class=&#34;link&#34; href=&#34;https://docs.render.com/blueprint-spec#referencing-values-from-other-services&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;reference the host from our ollama server&lt;/a&gt; in our main application&amp;rsquo;s environment variables, like so:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;envVars&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  - &lt;span style=&#34;color:#f92672&#34;&gt;key&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;OLLAMA_URL&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;fromService&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;name&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;your-app-ollama&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;type&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;pserv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;property&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;hostport&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The property &lt;code&gt;hostport&lt;/code&gt; will be a string that&amp;rsquo;s the host and the port separated by a colon that you can then reference in your application&amp;rsquo;s code by accessing the environment variables.&lt;/p&gt;
+&lt;p&gt;In my Rails application, I added a config option that was the content of the environment variable, or localhost for my development environment.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;config/application.rb&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;config&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ollama_url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;fetch(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;OLLAMA_URL&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;localhost:11434&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And that&amp;rsquo;s all! Now I can use &lt;code&gt;Rails.configuration.ollama_url&lt;/code&gt; wherever I need to access the ollama instance.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m using the &lt;a class=&#34;link&#34; href=&#34;https://github.com/alexrudall/ruby-openai?tab=readme-ov-file#ollama&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;ruby-openai&lt;/a&gt; gem to handle the communication between my Rails application and the ollama instance, and supporting this is also very straightforward as you only have to include this newly created configuration variable when initializing the client:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;client &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;OpenAI&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;Client&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;new(
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;uri_base&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;Rails&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;configuration&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;ollama_url,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      )
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Hope this helped someone implement this setup quickly!&lt;/p&gt;
+&lt;p&gt;I like having control of the models I want to run, and this will allow me a lot of flexibility to tailor my parameters to my use case.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>ollama as a docker-compose service for VSCode Devcontainers</title>
+        <link>http://localhost:1313/post/ollama-devcontainer-docker-compose/</link>
+        <pubDate>Mon, 29 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/ollama-devcontainer-docker-compose/</guid>
+        <description>&lt;h1 id=&#34;heading&#34;&gt;
+    &lt;a href=&#34;#heading&#34; class=&#34;header-anchor&#34;&gt;#&lt;/a&gt;
+    
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>The Long(ish) Journey.</title>
         <link>http://localhost:1313/post/about/</link>
         <pubDate>Wed, 17 Apr 2024 13:15:59 -0400</pubDate>
