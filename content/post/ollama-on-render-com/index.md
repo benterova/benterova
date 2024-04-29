@@ -1,6 +1,7 @@
 +++
 title = 'Deploying ollama on Render.com Private Services'
-description = "How I ran the ollama Docker image on Render.com private services."
+description = "A short guide on running ollama Docker image on Render.com private services, and connecting to it from your application"
+date = 2024-04-29
 draft = false
 keywords = 'ollama,docker,render,deployment,development'
 +++
