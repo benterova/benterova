@@ -63,7 +63,7 @@ September 2018 - 2019
 
 - **Contributions**:
   - Managed Linux (RHEL) administration and deployment for research divisions.
-  - Led integration with propreitary software and hardware systems for research divisions, and ensured compliance with HIPAA and other University policies.
+  - Led integration with proprietary software and hardware systems for research divisions, and ensured compliance with HIPAA and other University policies.
   - Was the primary point of contact for C-level executives and other high-profile individuals within the hospital and research divisions.
   - Managed ticket queue and assignments for the desktop support team.
   - Developed and maintained scripts for automating system administration tasks.
@@ -78,7 +78,7 @@ Jan 2018 - Present
 
 - **Contributions**:
   - Developed custom solutions for client websites that needed more advanced third-party integrations than their native platforms could provide.
-  - On-premisis networking installation and consultation on best practices for small businesses.
+  - On-premises networking installation and consultation on best practices for small businesses.
   - Facilitated App Store and Play Store deployments for client's training application
 - **Tech Stack:** HTML/CSS, JavaScript, PHP, SquareSpace, WordPress
 
@@ -91,7 +91,7 @@ May 2017 - 2018
   - Develop and maintain client websites and web applications.
   - Develop and maintain client email campaigns and basic marketing automation.
   - Develop and maintain client social media presence and content.
-  - On some occasions, provide on-premisis support for hardware and networking issues.
+  - On some occasions, provide on-premises support for hardware and networking issues.
 - **Tech Stack:** WordPress, SquareSpace, JavaScript, PHP
 
 ### Fly Consulting, Brighton, MI — Web Developer
