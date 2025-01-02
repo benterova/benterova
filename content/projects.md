@@ -2,31 +2,12 @@
 menu:
     main:
         name: 'Projects'
-        weight: 3
+        weight: 2
 keywords: "rails,resume,optimization,chatgpt,ai,job search,stimulus,devise"
 ---
 
 # Projects
 
-## 💼 [betterjob.app](https://betterjob.app)
-A opportunity management platform utilizing OpenAI's GPT API to optimize resume content and cover letters for job options. 
-
-**Features** 
-- Opportunity job description parsing and keyword extraction
-- Accurate resume PDF parsing & autofill
-- Automatically selects relevant experience and skills based on the opportunity.
-
-**Tech Stack**
-- Rails 7
-- Hotwire
-- Stimulus
-- Devise
-- Sidekiq
-- PostgreSQL
-- Adobe PDFServices
-- ChatGPT API
-
----
 
 ## 💎 [Adobe PDF Services Ruby Gem](https://github.com/benterova/adobe-pdfservices-ruby)
 A gem I made primarily for the PDF parsing and extraction used by [betterjob.app](https://betterjob.app). Forked from another project, I wasn't a fan of heavily repeat logic used and it also didn't support the newer PDF extraction operation. I rebuilt almost all of it using more object-oriented principles and adapted the tests to fit the usage patterns I expected to have.

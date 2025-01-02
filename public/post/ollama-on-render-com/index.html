@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='http://localhost:1313/post/ollama-on-render-com/'>
 
-<link rel="stylesheet" href="/scss/style.min.760e3dabc1e140d2e6abd27a8ca0aabb60e568829b29f67d2df12024136eff37.css"><meta property='og:title' content="Deploying ollama on Render.com Private Services">
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Deploying ollama on Render.com Private Services">
 <meta property='og:description' content="A short guide on running ollama Docker image on Render.com private services, and connecting to it from your application">
 <meta property='og:url' content='http://localhost:1313/post/ollama-on-render-com/'>
 <meta property='og:site_name' content='Ben Terova'>
@@ -14,9 +14,6 @@
 <meta name="twitter:title" content="Deploying ollama on Render.com Private Services">
 <meta name="twitter:description" content="A short guide on running ollama Docker image on Render.com private services, and connecting to it from your application"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/post/ollama-on-render-com/render.png' />
-  
-
-
     </head>
     <body class="
     article-page
@@ -165,8 +162,8 @@
     <header class="article-header">
         <div class="article-image">
             <a href="/post/ollama-on-render-com/">
-                <img src="/post/ollama-on-render-com/render_huf712d19d188f8cec13473d5354ac045f_90541_800x0_resize_box_3.png"
-                        srcset="/post/ollama-on-render-com/render_huf712d19d188f8cec13473d5354ac045f_90541_800x0_resize_box_3.png 800w, /post/ollama-on-render-com/render_huf712d19d188f8cec13473d5354ac045f_90541_1600x0_resize_box_3.png 1600w"
+                <img src="/post/ollama-on-render-com/render_hu7543929126447026519.png"
+                        srcset="/post/ollama-on-render-com/render_hu7543929126447026519.png 800w, /post/ollama-on-render-com/render_hu17097110868525181002.png 1600w"
                         width="800" 
                         height="447" 
                         loading="lazy"
@@ -237,19 +234,13 @@
     <section class="article-content">
     
     
-    <h1 id="deploying-ollama-on-rendercom-private-services">
-    <a href="#deploying-ollama-on-rendercom-private-services" class="header-anchor">#</a>
-    Deploying ollama on Render.com Private Services
-</h1><h3 id="note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying">
-    <a href="#note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying" class="header-anchor">#</a>
-    Note: For most smaller cases, llama3 is too expensive to run on Render private services. It&rsquo;s likely better to run on an API, however this is how you can do it if you&rsquo;re interested in trying.
+    <h1 id="deploying-ollama-on-rendercom-private-services">Deploying ollama on Render.com Private Services
+</h1><h3 id="note-for-most-smaller-cases-llama3-is-too-expensive-to-run-on-render-private-services-its-likely-better-to-run-on-an-api-however-this-is-how-you-can-do-it-if-youre-interested-in-trying">Note: For most smaller cases, llama3 is too expensive to run on Render private services. It&rsquo;s likely better to run on an API, however this is how you can do it if you&rsquo;re interested in trying.
 </h3><p>I&rsquo;ve been working on my resume and cover letter optimization application <a class="link" href="https://betterjob.app"  target="_blank" rel="noopener"
     >betterjob.app</a>, and I wanted to switch from ChatGPT to a private service running <a class="link" href="https://github.com/ollama/ollama"  target="_blank" rel="noopener"
     >ollama</a> to have more control over my models, parameters, and potentially even costs? (I might update this post with information relating to potential cost savings after I&rsquo;ve run some tests. Might end up being more expensive for my use case though.)</p>
 <p>The provided Dockerfile works, however it doesn&rsquo;t come with any models preinstalled. We&rsquo;ll need to modify the Dockerfile of the ollama build process to download llama3 after the container has finished building.</p>
-<h3 id="ollama-directory">
-    <a href="#ollama-directory" class="header-anchor">#</a>
-    ollama Directory
+<h3 id="ollama-directory">ollama Directory
 </h3><p>First, I created a new directory in my application&rsquo;s repo root called &ldquo;ollama&rdquo;, which will contain the Dockerfile, entrypoint script, as well as other ollama specific files we&rsquo;ll need, such as a Modelfile to later modify the behavior of our model.</p>
 <p>Within the <code>ollama/Dockerfile</code> I placed the following I found someplace on Github. I lost it, but if I find it I&rsquo;ll update the link here.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># Stage 1: Build the binary</span><span style="color:#960050;background-color:#1e0010">
@@ -312,9 +303,7 @@
 </span></span></code></pre></div><p>Render.com&rsquo;s private services don&rsquo;t have any GPU&rsquo;s to utilize, and this Dockerfile doesn&rsquo;t install any dependencies for being GPU accelerated.</p>
 <p>If you&rsquo;re going to be using a different Modelfile, be sure to uncomment line 26 of <code>ollama/Dockerfile</code> and make the file <code>ollama/Modelfile</code> with the <a class="link" href="https://github.com/ollama/ollama/blob/main/docs/modelfile.md"  target="_blank" rel="noopener"
     >desired alterations.</a></p>
-<h3 id="blueprint-file">
-    <a href="#blueprint-file" class="header-anchor">#</a>
-    Blueprint File
+<h3 id="blueprint-file">Blueprint File
 </h3><p>I&rsquo;m using the <a class="link" href="https://docs.render.com/blueprint-spec"  target="_blank" rel="noopener"
     >Render Blueprint YAML</a> to define and build my services through code. To create the private service that will be running the ollama Docker image, I added the following to my <code>render.yaml</code> file:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>  - <span style="color:#f92672">type</span>: <span style="color:#ae81ff">pserv</span>
@@ -346,9 +335,7 @@
 </span></span></code></pre></div><p>Hope this helped someone implement this setup quickly!</p>
 <p>I like having control of the models I want to run, and this will allow me a lot of flexibility to tailor my parameters to my use case.</p>
 <hr>
-<h2 id="configuring-vscode-devcontainers">
-    <a href="#configuring-vscode-devcontainers" class="header-anchor">#</a>
-    Configuring VSCode Devcontainers
+<h2 id="configuring-vscode-devcontainers">Configuring VSCode Devcontainers
 </h2><p>With the <code>ollama</code> directory being in the root of our repo, we&rsquo;re able to share the same Dockerfile between our VSCode dev container and Render.com to ensure that we&rsquo;re always running the same as what&rsquo;s running in production.</p>
 <p>I&rsquo;m using the Docker compose container-to-container networking mode, and within <code>.devcontainer/docker-compose.yml</code> I&rsquo;ve added the following:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">services</span>:
@@ -386,14 +373,14 @@
     <section class="copyright">
         &copy; 
         
-        2024 Ben Terova
+        2025 Ben Terova
     </section>
     
     <section class="powerby">
         
             ben@benterova.com <br/>
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
-        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.29.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
 </footer>
 
@@ -482,7 +469,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.83dd3af2fef5daeea86710e3b04d80dc2d6613379f7350480e3a9f4da1836812.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
