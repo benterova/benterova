@@ -13,7 +13,7 @@ The big enterprise quality platforms do everything, cost a fortune, and take mon
 
 The spreadsheet works fine when you have five suppliers. It starts to crack when you have twenty. And when an auditor shows up asking for your approved vendor list, your NCR history, and your CAPA closure rates, it completely falls apart. Suddenly you're up late the night before pulling data out of three different files and hoping nothing's out of date.
 
-I built [SupplierScore](https://supplierscore.app) for the shops stuck in that middle ground.
+I built [SupplierScore](https://supplierscore.app?utm_source=benterova.com&utm_medium=website&utm_campaign=blog) for the shops stuck in that middle ground.
 
 It's a supplier quality management tool built around what a quality manager at a 15 to 50 person shop would actually use every day. Here's what's in it:
 
@@ -25,4 +25,4 @@ It's a supplier quality management tool built around what a quality manager at a
 
 I kept the scope tight on purpose. A tool that tries to do everything usually ends up doing nothing well, and I'd rather build something people open every morning than something that looks great in a comparison chart.
 
-If you're running quality at a smaller shop, take a look at [supplierscore.app](https://supplierscore.app). I'd like to hear how it fits into your workflow.
+If you're running quality at a smaller shop, take a look at [supplierscore.app](https://supplierscore.app?utm_source=benterova.com&utm_medium=website&utm_campaign=blog). I'd like to hear how it fits into your workflow.
