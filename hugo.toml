@@ -2,11 +2,11 @@ baseURL = 'https://benterova.com/'
 languageCode = 'en-us'
 title = 'Ben Terova'
 theme = 'stack'
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [Params.Sidebar]
 subtitle = 'Software Engineer | ❤️ Ruby'
-avatar.src = 'https://avatars.githubusercontent.com/u/1569138'
-avatar.local = false
+avatar = 'https://avatars.githubusercontent.com/u/1569138'
 emoji = '🐧'
 
 [Params.Footer]
