@@ -1,14 +1,28 @@
-Hi 👋 My name is Ben Terova
-===============================
+# Hey, I'm Ben 👋
 
-Senior Software Engineer @ Cultural Intelligence Center
---------------------------
+I'm a technical and IT leader based in Brighton, Michigan. For the last decade I've been the person who owns the whole technical picture wherever I land — the software, the systems, the infrastructure, the security, and usually the vendor headaches too. I've built and rebuilt production platforms end to end, run IT operations across hospital and research environments, and kept my own dev/IT firm going the entire time.
 
-Hey there! I'm Ben Terova, I built robust, fault-tolerant full-stack applications. My background is primarily in backend development and have been working in the full web stack for over 10 years. I'm currently improving the Cultural Intelligence Center's learning management platform in Southfield, Michigan. 💪
+Right now I'm looking for **IT leadership roles** where I get to build and lead a team instead of being the team.
 
-* 🌍  I'm based in Brighton, Michigan
-* 🖥️  Be sure to check out my [personal site](https://benterova.com)
-* ✉️  You can contact me at [ben@benterova.com](mailto:ben@benterova.com)
-* 🧠  Focusing heavily on Ruby and Rails
-* 🤝  Open to collaboration :)
+### What I work with
 
+- **Backend:** Ruby on Rails, PostgreSQL, Redis
+- **Frontend:** React, Svelte, Vue
+- **Systems & ops:** Linux (I daily-drive it), RHEL/Windows administration, networking, self-hosting, CI/CD
+- **Lately:** Rust, and poking at game dev with Godot
+
+### A few things I've built
+
+- **[adobe_pdfservices_ruby](https://github.com/benterova)** — a Ruby gem wrapping the Adobe PDF Services API to make document manipulation less painful.
+- **Open source bits** — contributions to teams-for-linux, konveyor.io (the Kubernetes community site, via a Red Hat contract), AMMO, and zoom_rb.
+- **Client work** — production sites and integrated systems for small businesses: booking, payments, e-commerce (Square, MindBody, Shopify, WooCommerce).
+
+### Outside the terminal
+
+Linux tinkering that goes well past "necessary," ARPGs and game modding, making music in Bitwig (hyperpop and UK garage, mostly), anime, and reading too much about geopolitics and macro.
+
+### Reach me
+
+- 📧 ben@benterova.com
+- 🌐 [benterova.com](https://benterova.com)
+- 💼 [linkedin.com/in/benterova](https://linkedin.com/in/benterova)
