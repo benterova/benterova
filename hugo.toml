@@ -1,27 +1,21 @@
 baseURL = 'https://benterova.com/'
 languageCode = 'en-us'
-title = 'Ben Terova'
-theme = 'stack'
-ignoreLogs = ['warning-goldmark-raw-html']
+title = 'Benjamin Terova'
 
-[Params.Sidebar]
-subtitle = 'Software Engineer | ❤️ Ruby'
-avatar = 'https://avatars.githubusercontent.com/u/1569138'
-emoji = '🐧'
+# Single-page splash — no theme, no sections, no taxonomies.
+disableKinds = ['taxonomy', 'term', 'RSS', 'sitemap', '404']
 
-[Params.Footer]
-customText = 'ben@benterova.com'
+[params]
+name = 'Benjamin Terova'
+tagline = 'IT & technical leader'
+email = 'ben@benterova.com'
+phone = '(517) 877-2192'
+phoneHref = '+15178772192'
 
-[menu]
-[[menu.social]]
-    name = "LinkedIn"
-    url = "https://linkedin.com/in/benterova"
-    [menu.social.params]
-        icon = "linkedin"
-        newTab = true
-[[menu.social]]
-    name = "GitHub"
-    url = "https://github.com/benterova"
-    [menu.social.params]
-        icon = "github"
-        newTab = true
+[[params.links]]
+name = 'LinkedIn'
+url = 'https://linkedin.com/in/benterova'
+
+[[params.links]]
+name = 'GitHub'
+url = 'https://github.com/benterova'

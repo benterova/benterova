@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Site.Params.name }} — {{ .Site.Params.tagline }}</title>
+  <meta name="description" content="{{ .Site.Params.name }}, {{ .Site.Params.tagline }}.">
+  <link rel="preconnect" href="https://benterova.com">
+  {{ $css := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+</head>
+<body>
+  <main class="card">
+    {{ $profile := (resources.Get "images/profile.png").Fill "440x440 Center webp q85" | resources.Fingerprint }}
+    <img class="avatar" src="{{ $profile.RelPermalink }}" width="220" height="220"
+         alt="Portrait of {{ .Site.Params.name }}">
+    <h1>{{ .Site.Params.name }}</h1>
+    <p class="tagline">{{ .Site.Params.tagline }}</p>
+
+    <p class="bio">
+      I run the full technical function wherever I work — software, IT operations,
+      infrastructure, and security. I've owned production platforms end to end and
+      run my own dev/IT firm for over a decade. Currently open to IT leadership roles.
+    </p>
+
+    <ul class="contact">
+      <li>
+        <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+      </li>
+      <li>
+        <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+      </li>
+      {{ range .Site.Params.links }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </main>
+</body>
+</html>

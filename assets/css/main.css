@@ -1,0 +1,136 @@
+:root {
+  --bg: #0d0d0f;
+  --surface: #141417;
+  --text: #ededef;
+  --muted: #9a9aa3;
+  --accent: #6ee7b7;
+  --hairline: #26262b;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1.5rem;
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  /* Base color + a faint off-center accent glow for depth */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(60rem 60rem at 70% -10%, rgba(110, 231, 183, 0.07), transparent 60%),
+    radial-gradient(50rem 50rem at 0% 110%, rgba(110, 231, 183, 0.04), transparent 55%);
+  background-attachment: fixed;
+}
+
+/* Subtle film grain overlay — inline SVG noise, no extra request */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.card {
+  width: 100%;
+  max-width: 34rem;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--hairline);
+  box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+  font-size: clamp(2.2rem, 7vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.bio {
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 32rem;
+}
+
+.contact {
+  list-style: none;
+  padding: 0;
+  margin: 2.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.75rem;
+}
+
+.contact a {
+  position: relative;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  padding-bottom: 2px;
+}
+
+.contact a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.contact a:hover,
+.contact a:focus-visible {
+  color: var(--accent);
+}
+
+.contact a:hover::after,
+.contact a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (max-width: 480px) {
+  .contact {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+}
